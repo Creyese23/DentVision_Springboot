@@ -24,4 +24,44 @@ public class Procedimiento {
     @ManyToOne
     @JoinColumn(name ="idCita")
     private Cita cita;
+
+    public Long getIdProcedimiento() {
+        return idProcedimiento;
+    }
+
+    public void setIdProcedimiento(Long idProcedimiento) {
+        this.idProcedimiento = idProcedimiento;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Cita getCita() {
+        return cita;
+    }
+
+    public void setCita(Cita cita) {
+        this.cita = cita;
+    }
 }

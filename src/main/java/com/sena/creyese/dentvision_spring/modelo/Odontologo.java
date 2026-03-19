@@ -34,7 +34,7 @@ public class Odontologo {
     @NotBlank(message = "Es obligatorio diligenciar el numero de la licencia profesional")
     @Size(max=50, message = "Maximo 50 caracteres")
     @Column(nullable = false, length = 50)
-    private String nLicencia;
+    private String N_Licencia;
 
     @OneToOne
     @JoinColumn(name ="idUsuario")
@@ -80,12 +80,12 @@ public class Odontologo {
         this.especialidad = especialidad;
     }
 
-    public String getnLicencia() {
-        return nLicencia;
+    public String getN_Licencia() {
+        return N_Licencia;
     }
 
-    public void setnLicencia(String nLicencia) {
-        this.nLicencia = nLicencia;
+    public void setN_Licencia(String N_Licencia) {
+        this.N_Licencia = N_Licencia;
     }
 
     public Usuario getUsuario() {

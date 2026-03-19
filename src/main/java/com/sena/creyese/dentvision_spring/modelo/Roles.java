@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "Roles")
-public class Rol {
+public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idRol;
@@ -31,4 +31,6 @@ public class Rol {
     public void setNombreRol(Enum nombreRol) {
         this.nombreRol = nombreRol;
     }
+
+
 }

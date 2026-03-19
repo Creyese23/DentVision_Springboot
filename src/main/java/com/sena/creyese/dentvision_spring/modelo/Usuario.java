@@ -20,7 +20,7 @@ public class Usuario {
 
     @NotBlank(message = "Es obligatorio diligenciar el numero de documento")
     @Size(max=50, message = "Maximo 50 caracteres")
-    @Column(nullable = false, length = 50)
+    @Column(unique = true, nullable = false, length = 50)
     private String documento;
 
     @NotBlank(message = "Es obligatorio diligenciar los nombre")
@@ -63,7 +63,7 @@ public class Usuario {
 
     @ManyToOne
     @JoinColumn(name ="idRol")
-    private Rol rol;
+    private Roles roles;
 
 
     public Long getId() {
@@ -154,11 +154,11 @@ public class Usuario {
         this.fecha_registro = fecha_registro;
     }
 
-    public Rol getRol() {
-        return rol;
+    public Roles getRol() {
+        return roles;
     }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public void setRol(Roles roles) {
+        this.roles = roles;
     }
 }
