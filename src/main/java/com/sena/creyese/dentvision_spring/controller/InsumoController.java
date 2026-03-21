@@ -1,4 +1,4 @@
 package com.sena.creyese.dentvision_spring.controller;
 
-public class InsumoInventarioController {
+public class InsumoController {
 }

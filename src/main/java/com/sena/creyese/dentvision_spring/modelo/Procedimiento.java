@@ -14,10 +14,13 @@ public class Procedimiento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProcedimiento;
 
-    @NotBlank(message = "")
+    @NotBlank(message = "Es obligatorio diligenciar la direccion")
+    @Size(max=50, message = "Maximo 50 caracteres")
     @Column(nullable = false, length = 50)
     private String descripcion;
+
     private boolean estado;
+
     @Temporal(TemporalType.DATE)
     private Date fecha;
 
