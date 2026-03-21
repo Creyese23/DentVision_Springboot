@@ -14,6 +14,16 @@ public class Paciente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPaciente;
 
+    @NotBlank(message = "Es obligatorio diligenciar tipo de documento")
+    @Size(max=50, message = "Maximo 50 caracteres")
+    @Column(nullable = false, length = 50)
+    private String tipoDocumento;
+
+    @NotBlank(message = "Es obligatorio diligenciar el numero de documento")
+    @Size(max=50, message = "Maximo 50 caracteres")
+    @Column(unique = true, nullable = false, length = 50)
+    private String documento;
+
     @NotBlank(message = "Es obligatorio diligenciar telefono")
     @Size(max=50, message = "Maximo 50 caracteres")
     @Column(nullable = false, length = 50)
@@ -25,7 +35,7 @@ public class Paciente {
     private String direccion;
 
     @Column(nullable = false, length = 50)
-    private Enum genero;
+    private String genero;
 
     @NotBlank(message = "")
     @Column(nullable = false)
@@ -37,6 +47,21 @@ public class Paciente {
 
     public Long getIdPaciente() {
         return idPaciente;
+    }
+    public String getTipoDocumento() {
+        return tipoDocumento;
+    }
+
+    public void setTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
     }
 
     public void setIdPaciente(Long idPaciente) {
@@ -59,11 +84,11 @@ public class Paciente {
         this.direccion = direccion;
     }
 
-    public Enum getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(Enum genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 

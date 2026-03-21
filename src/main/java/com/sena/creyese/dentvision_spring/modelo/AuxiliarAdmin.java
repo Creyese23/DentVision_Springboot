@@ -13,6 +13,16 @@ public class AuxiliarAdmin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idAuxiliarAdmin;
 
+    @NotBlank(message = "Es obligatorio diligenciar tipo de documento")
+    @Size(max=50, message = "Maximo 50 caracteres")
+    @Column(nullable = false, length = 50)
+    private String tipoDocumento;
+
+    @NotBlank(message = "Es obligatorio diligenciar el numero de documento")
+    @Size(max=50, message = "Maximo 50 caracteres")
+    @Column(unique = true, nullable = false, length = 50)
+    private String documento;
+
     @NotBlank(message = "Es obligatorio diligenciar telefono")
     @Size(max=50, message = "Maximo 50 caracteres")
     @Column(nullable = false, length = 50)
@@ -45,6 +55,22 @@ public class AuxiliarAdmin {
 
     public void setIdAuxiliarAdmin(Long idAuxiliarAdmin) {
         this.idAuxiliarAdmin = idAuxiliarAdmin;
+    }
+
+    public String getTipoDocumento() {
+        return tipoDocumento;
+    }
+
+    public void setTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
     }
 
     public String getTelefono() {
