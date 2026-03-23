@@ -1,4 +1,11 @@
 package com.sena.creyese.dentvision_spring.repository;
 
-public class AdminRepository {
+
+import com.sena.creyese.dentvision_spring.modelo.Admin;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface AdminRepository extends JpaRepository<Admin, Long> {
+
 }
