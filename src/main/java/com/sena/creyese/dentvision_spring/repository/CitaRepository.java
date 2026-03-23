@@ -1,4 +1,9 @@
 package com.sena.creyese.dentvision_spring.repository;
 
-public class CitaRepository {
+import com.sena.creyese.dentvision_spring.modelo.Cita;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CitaRepository extends JpaRepository<Cita, Long> {
 }
