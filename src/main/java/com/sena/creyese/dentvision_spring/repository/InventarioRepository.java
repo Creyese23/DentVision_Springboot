@@ -1,6 +1,10 @@
 package com.sena.creyese.dentvision_spring.repository;
 
+import com.sena.creyese.dentvision_spring.modelo.Inventario;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public class InventarioRepository {
+@Repository
+public interface InventarioRepository extends JpaRepository<Inventario,Long> {
 
 }
