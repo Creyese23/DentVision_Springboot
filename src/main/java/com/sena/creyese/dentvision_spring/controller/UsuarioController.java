@@ -3,6 +3,7 @@ package com.sena.creyese.dentvision_spring.controller;
 import com.sena.creyese.dentvision_spring.modelo.Usuario;
 import com.sena.creyese.dentvision_spring.service.UsuarioService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
 
+    @Autowired
     private final UsuarioService usuarioService;
 
     public UsuarioController(UsuarioService usuarioService) {

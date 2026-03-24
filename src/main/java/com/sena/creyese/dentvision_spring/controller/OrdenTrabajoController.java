@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/ordenes-trabajo")
+@RequestMapping("/api/ordenes_trabajo")
 public class OrdenTrabajoController {
 
     @Autowired

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/detalles-factura")
+@RequestMapping("/api/detalle_factura")
 public class DetalleFacturaController {
 
     @Autowired
