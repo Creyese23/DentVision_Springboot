@@ -31,6 +31,4 @@ public class Roles {
     public void setNombreRol(Enum nombreRol) {
         this.nombreRol = nombreRol;
     }
-
-
 }
