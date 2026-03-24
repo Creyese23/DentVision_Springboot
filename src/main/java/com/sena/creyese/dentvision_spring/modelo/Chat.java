@@ -12,6 +12,7 @@ public class Chat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idChat;
 
+
     @Column(nullable = false)
     private LocalDateTime fechaChat;
 
