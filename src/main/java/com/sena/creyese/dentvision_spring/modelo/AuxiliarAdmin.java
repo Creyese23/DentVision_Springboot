@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
-@Table(name = "AuxiliarAdmin")
+@Table(name = "auxiliar_admin")
 public class AuxiliarAdmin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

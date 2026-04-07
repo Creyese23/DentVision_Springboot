@@ -3,7 +3,7 @@ package com.sena.creyese.dentvision_spring.modelo;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "detalleFactura")
+@Table(name = "detalle_factura")
 public class DetalleFactura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

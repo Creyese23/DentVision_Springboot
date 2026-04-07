@@ -3,15 +3,17 @@ package com.sena.creyese.dentvision_spring.controller;
 import com.sena.creyese.dentvision_spring.modelo.TecnicoDental;
 import com.sena.creyese.dentvision_spring.service.TecnicoDentalService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/tecnicos-dentales")
+@RequestMapping("/api/tecnico_dental")
 public class TecnicoDentalController {
 
+    @Autowired
     private final TecnicoDentalService tecnicoDentalService;
 
     public TecnicoDentalController(TecnicoDentalService tecnicoDentalService) {
