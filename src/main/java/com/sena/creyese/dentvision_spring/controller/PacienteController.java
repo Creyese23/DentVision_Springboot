@@ -16,9 +16,9 @@ import java.util.List;
  * Todos los endpoints están bajo la ruta base /api/pacientes y siguen los
  * estándares RESTful para una mejor integración con clientes web y móviles.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/pacientes: Obtener todos los pacientes

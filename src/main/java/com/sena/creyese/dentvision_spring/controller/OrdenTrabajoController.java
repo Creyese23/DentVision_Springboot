@@ -16,9 +16,9 @@ import java.util.List;
  * odontólogos y técnicos, seguimiento de estados y observaciones. Todos los
  * endpoints están bajo la ruta base /api/ordenes-trabajo y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/ordenes-trabajo: Obtener todas las órdenes de trabajo

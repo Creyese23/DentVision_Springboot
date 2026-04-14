@@ -15,11 +15,11 @@ import java.util.Optional;
  * y eliminación. Actúa como una capa de abstracción entre los controladores
  * y el repositorio de pacientes.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de pacientes
  * - Búsqueda por documento de identificación
  * - Validaciones de negocio

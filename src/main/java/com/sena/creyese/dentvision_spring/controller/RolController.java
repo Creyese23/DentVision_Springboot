@@ -16,9 +16,9 @@ import java.util.List;
  * Utiliza el enum TipoRol para garantizar la integridad y seguridad de los roles.
  * Todos los endpoints están bajo la ruta base /api/roles y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/roles: Obtener todos los roles

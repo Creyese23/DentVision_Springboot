@@ -10,9 +10,9 @@ import jakarta.persistence.*;
  * del archivo, descripción detallada y relación con el procedimiento correspondiente.
  * Facilita el almacenamiento y gestión de recursos visuales para tratamientos.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Almacenamiento de imágenes de diseño dental

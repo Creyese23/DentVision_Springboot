@@ -10,9 +10,9 @@ import jakarta.persistence.*;
  * con la factura principal y el servicio específico. Permite el desglose de costos
  * por cada procedimiento dental facturado.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Desglose detallado de servicios facturados

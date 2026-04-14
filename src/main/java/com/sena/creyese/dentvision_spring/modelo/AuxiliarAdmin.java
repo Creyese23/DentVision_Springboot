@@ -13,9 +13,9 @@ import java.util.Date;
  * personal y profesional de los auxiliares administrativos que apoyan en la gestión
  * de la clínica dental. Incluye datos de identificación, contacto y relación con el usuario.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Información personal completa del auxiliar administrativo

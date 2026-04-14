@@ -12,9 +12,9 @@ import java.time.LocalDateTime;
  * del mensaje, fecha y hora de envío, y relaciones con la conversación y el usuario
  * emisor. Facilita la comunicación interna y seguimiento de interacciones.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Gestión de mensajes individuales

@@ -16,9 +16,9 @@ import java.util.List;
  * gestión de inventario y alertas de reabastecimiento. Todos los endpoints
  * están bajo la ruta base /api/insumos y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/insumos: Obtener todos los insumos

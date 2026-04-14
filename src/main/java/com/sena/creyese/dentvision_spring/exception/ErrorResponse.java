@@ -8,9 +8,9 @@ package com.sena.creyese.dentvision_spring.exception;
  * para todas las respuestas de error, incluyendo mensaje descriptivo, código
  * de estado HTTP y timestamp del momento en que ocurrió el error.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Estructura de respuesta:
  * - mensaje: Descripción detallada del error ocurrido

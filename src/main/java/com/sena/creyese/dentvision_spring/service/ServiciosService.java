@@ -15,11 +15,11 @@ import java.util.Optional;
  * precios, categorías y disponibilidad de servicios. Actúa como una capa
  * de abstracción entre los controladores y el repositorio de servicios.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de servicios dentales
  * - Gestión de precios y categorías
  * - Control de disponibilidad de servicios

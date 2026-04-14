@@ -15,11 +15,11 @@ import java.util.Optional;
  * seguimiento, confirmación y gestión de métodos de pago. Actúa como
  * una capa de abstracción entre los controladores y el repositorio de pagos.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de pagos de servicios
  * - Seguimiento de estados de pago
  * - Gestión de métodos de pago (efectivo, tarjeta, transferencia)

@@ -15,9 +15,9 @@ import java.util.List;
  * CRUD sobre servicios dentales, incluyendo nombre, descripción y precios.
  * Todos los endpoints están bajo la ruta base /api/servicios y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/servicios: Obtener todos los servicios

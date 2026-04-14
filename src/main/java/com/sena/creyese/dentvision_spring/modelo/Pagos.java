@@ -13,9 +13,9 @@ import java.util.List;
  * método de pago, monto y relación con las facturas correspondientes. Facilita
  * el seguimiento completo de las transacciones y gestión financiera.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Gestión completa de transacciones financieras

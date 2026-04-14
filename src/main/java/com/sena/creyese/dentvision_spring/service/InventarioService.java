@@ -15,11 +15,11 @@ import java.util.Optional;
  * movimientos de suministros, control de stock y gestión de entradas/salidas.
  * Actúa como una capa de abstracción entre los controladores y el repositorio.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de movimientos de inventario
  * - Seguimiento de stock de suministros
  * - Control de entradas y salidas

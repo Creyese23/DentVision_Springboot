@@ -15,11 +15,11 @@ import java.util.Optional;
  * recordatorios de citas, notificaciones de sistema y comunicación general.
  * Actúa como una capa de abstracción entre los controladores y el repositorio.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de notificaciones
  * - Envío de alertas a usuarios específicos
  * - Recordatorios automáticos de citas

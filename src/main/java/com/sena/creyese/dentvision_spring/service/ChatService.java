@@ -18,11 +18,11 @@ import java.util.Optional;
  * búsqueda por rangos de fechas. Actúa como una capa de abstracción entre
  * los controladores y el repositorio de chat.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de mensajes de chat
  * - Envío y recepción de mensajes entre usuarios
  * - Seguimiento de conversaciones

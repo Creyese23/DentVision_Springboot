@@ -20,9 +20,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  * con autenticación basada en tokens JWT. Define las reglas de acceso a los endpoints
  * y configura los componentes necesarios para la gestión de seguridad.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de seguridad configuradas:
  * - Deshabilitación de CSRF (para API REST)

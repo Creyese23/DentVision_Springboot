@@ -15,11 +15,11 @@ import java.util.Optional;
  * y eliminación. Actúa como una capa de abstracción entre los controladores
  * y el repositorio de usuarios.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de usuarios
  * - Búsqueda por email para autenticación
  * - Operaciones de negocio centralizadas

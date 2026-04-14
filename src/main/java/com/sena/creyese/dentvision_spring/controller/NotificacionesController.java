@@ -16,9 +16,9 @@ import java.util.List;
  * gestión de alertas y comunicaciones importantes. Todos los endpoints están bajo la
  * ruta base /api/notificaciones y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/notificaciones: Obtener todas las notificaciones

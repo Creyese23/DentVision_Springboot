@@ -12,9 +12,9 @@ import java.util.Date;
  * completitud, observaciones y relación con la orden de trabajo correspondiente.
  * Permite el seguimiento del ciclo de vida de los trabajos dentales.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Registro de entregas de trabajos dentales

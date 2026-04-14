@@ -15,11 +15,11 @@ import java.util.Optional;
  * seguimiento, confirmación de recepción y gestión de estados. Actúa como
  * una capa de abstracción entre los controladores y el repositorio de entregas.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de entregas de trabajos
  * - Seguimiento de estados de entrega
  * - Confirmación de recepción por pacientes

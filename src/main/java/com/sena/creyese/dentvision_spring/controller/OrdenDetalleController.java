@@ -16,9 +16,9 @@ import java.util.List;
  * descripción de procedimientos, cantidades y seguimiento de ejecución. Todos los
  * endpoints están bajo la ruta base /api/orden-detalles y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/orden-detalles: Obtener todos los detalles de órdenes

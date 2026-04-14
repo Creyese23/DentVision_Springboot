@@ -16,9 +16,9 @@ import java.util.List;
  * confirmación de recepción y gestión de estados. Todos los endpoints están bajo
  * la ruta base /api/entregas y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/entregas: Obtener todas las entregas

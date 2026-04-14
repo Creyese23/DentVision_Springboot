@@ -7,9 +7,9 @@ package com.sena.creyese.dentvision_spring.enums;
  * en el sistema de gestión dental. Cada rol define los permisos y accesos
  * que tendrá el usuario dentro de la aplicación.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Roles disponibles:
  * - ADMIN: Administrador del sistema con acceso completo

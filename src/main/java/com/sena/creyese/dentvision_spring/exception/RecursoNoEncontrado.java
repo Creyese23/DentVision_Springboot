@@ -8,9 +8,9 @@ package com.sena.creyese.dentvision_spring.exception;
  * en la base de datos. Es capturada por el GlobalExceptionHandler para
  * retornar una respuesta HTTP 404 (Not Found) con un mensaje descriptivo.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características:
  * - Hereda de RuntimeException para no requerir manejo obligatorio

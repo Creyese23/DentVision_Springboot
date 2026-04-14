@@ -13,9 +13,9 @@ import java.util.Date;
  * personal y profesional de los administradores del sistema. Cada administrador
  * está asociado a un usuario para autenticación y acceso al sistema.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Identificación única mediante documento

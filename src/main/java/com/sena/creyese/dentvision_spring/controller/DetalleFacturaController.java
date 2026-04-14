@@ -16,9 +16,9 @@ import java.util.List;
  * cantidades, precios unitarios y subtotales. Todos los endpoints están bajo la
  * ruta base /api/detalles-factura y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/detalles-factura: Obtener todos los detalles de facturas

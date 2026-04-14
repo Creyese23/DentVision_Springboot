@@ -10,9 +10,9 @@ import jakarta.persistence.*;
  * cantidad y relación con la orden principal. Permite el desglose específico de los
  * procedimientos y materiales necesarios para cada trabajo dental.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Desglose detallado de órdenes de trabajo

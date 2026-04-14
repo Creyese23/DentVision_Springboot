@@ -10,9 +10,9 @@ import jakarta.persistence.*;
  * descripción, control de stock actual y nivel mínimo de reabastecimiento. Facilita
  * la gestión eficiente del inventario y alertas de reposición.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Gestión completa de inventario de insumos

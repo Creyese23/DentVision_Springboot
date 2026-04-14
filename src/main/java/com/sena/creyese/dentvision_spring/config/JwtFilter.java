@@ -29,9 +29,9 @@ import java.util.Map;
  * presentes en el header Authorization. Si el token es válido, establece
  * el contexto de autenticación en Spring Security.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Funcionalidades implementadas:
  * - Extracción de token del header HTTP

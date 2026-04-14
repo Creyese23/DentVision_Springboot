@@ -15,11 +15,11 @@ import java.util.Optional;
  * asignación de roles y control de acceso. Actúa como una capa de
  * abstracción entre los controladores y el repositorio de roles.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de roles de usuario
  * - Control de permisos y accesos
  * - Validaciones de seguridad
