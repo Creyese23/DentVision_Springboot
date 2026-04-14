@@ -14,9 +14,9 @@ import java.util.Date;
  * de laboratorio y fabricación de prótesis. Incluye datos de identificación,
  * especialidad y relación con el usuario del sistema.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Información personal completa del técnico dental

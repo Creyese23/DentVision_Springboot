@@ -15,11 +15,11 @@ import java.util.Optional;
  * especializados, precios, duraciones y requisitos especiales. Actúa como una
  * capa de abstracción entre los controladores y el repositorio de procedimientos.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de procedimientos dentales
  * - Gestión de precios y duraciones
  * - Control de requisitos especiales (anestesia, radiografía)

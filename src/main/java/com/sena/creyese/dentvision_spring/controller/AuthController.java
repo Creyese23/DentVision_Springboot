@@ -17,9 +17,9 @@ import java.util.Optional;
  * inicio de sesión y verificación de tokens JWT. Proporciona los endpoints
  * necesarios para que los usuarios puedan autenticarse en el sistema.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - POST /auth/register - Registro de nuevos usuarios

@@ -13,9 +13,9 @@ import java.time.LocalTime;
  * fecha, hora, estado y motivo, además de las relaciones con el paciente
  * y el odontólogo involucrados.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Programación de fechas y horas con API moderna (LocalDate/LocalTime)

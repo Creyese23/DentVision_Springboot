@@ -14,9 +14,9 @@ import java.util.Date;
  * dental, incluyendo datos demográficos, contacto e información médica básica.
  * Está relacionada con la entidad Usuario para la autenticación.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características principales:
  * - Información de identificación personal

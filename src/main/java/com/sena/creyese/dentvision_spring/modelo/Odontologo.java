@@ -14,9 +14,9 @@ import java.util.Date;
  * a un usuario para autenticación y acceso al sistema, incluyendo su especialidad y
  * licencia profesional.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Identificación única mediante documento

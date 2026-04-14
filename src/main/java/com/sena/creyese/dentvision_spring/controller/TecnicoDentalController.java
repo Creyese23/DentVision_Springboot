@@ -16,9 +16,9 @@ import java.util.List;
  * y datos de contacto. Todos los endpoints están bajo la ruta base
  * /api/tecnicos-dentales y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/tecnicos-dentales: Obtener todos los técnicos dentales

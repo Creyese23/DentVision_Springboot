@@ -15,11 +15,11 @@ import java.util.Optional;
  * control de stock, precios y proveedores. Actúa como una capa de
  * abstracción entre los controladores y el repositorio de insumos.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de insumos dentales
  * - Control de stock y niveles críticos
  * - Gestión de precios y categorías

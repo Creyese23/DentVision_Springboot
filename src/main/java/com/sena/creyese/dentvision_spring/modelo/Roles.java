@@ -12,9 +12,9 @@ import jakarta.validation.constraints.Size;
  * de los diferentes roles que pueden tener los usuarios en el sistema. Utiliza
  * el enum TipoRol para definir los roles disponibles y sus permisos asociados.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Definición de roles mediante enumeración tipada

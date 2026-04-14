@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
  * tipos de errores. Utiliza la anotación @ControllerAdvice para interceptar
  * excepciones en todos los controladores de la aplicación.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Funcionalidades implementadas:
  * - Manejo centralizado de excepciones

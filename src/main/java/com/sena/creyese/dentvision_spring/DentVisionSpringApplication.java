@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Esta clase es el punto de entrada de la aplicación de gestión dental.
  * Contiene el método main que inicia el contexto de Spring Boot.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características principales:
  * - Sistema de gestión dental completo

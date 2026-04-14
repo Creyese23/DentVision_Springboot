@@ -16,9 +16,9 @@ import java.util.List;
  * métodos de pago, montos y seguimiento de facturas asociadas. Todos los endpoints
  * están bajo la ruta base /api/pagos y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/pagos: Obtener todos los pagos

@@ -15,11 +15,11 @@ import java.util.Optional;
  * entre usuarios, notificaciones y seguimiento de correspondencia. Actúa como
  * una capa de abstracción entre los controladores y el repositorio de mensajes.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de mensajes internos
  * - Comunicación entre usuarios del sistema
  * - Seguimiento de correspondencia

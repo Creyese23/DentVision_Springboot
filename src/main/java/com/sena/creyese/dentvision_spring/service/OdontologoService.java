@@ -15,11 +15,11 @@ import java.util.Optional;
  * gestión de especialidades y disponibilidad. Actúa como una capa de
  * abstracción entre los controladores y el repositorio de odontólogos.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de odontólogos
  * - Búsqueda por documento de identificación
  * - Gestión de especialidades y licencias

@@ -15,11 +15,11 @@ import java.util.Optional;
  * cálculo de totales, gestión de pagos y seguimiento de cobros.
  * Actúa como una capa de abstracción entre los controladores y el repositorio.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de facturas
  * - Cálculo automático de totales e impuestos
  * - Gestión de estados de pago

@@ -15,11 +15,11 @@ import java.util.Optional;
  * gestión de archivos, aprobación y seguimiento de diseños. Actúa como
  * una capa de abstracción entre los controladores y el repositorio de imágenes.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de imágenes de diseño
  * - Almacenamiento y gestión de archivos digitales
  * - Control de estados de aprobación

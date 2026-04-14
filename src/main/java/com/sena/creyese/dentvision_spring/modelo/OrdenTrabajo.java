@@ -12,9 +12,9 @@ import java.util.Date;
  * con el paciente, odontólogo y técnico dental involucrados. Facilita el seguimiento
  * completo del ciclo de vida de los tratamientos dentales.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Gestión completa de órdenes de trabajo dental

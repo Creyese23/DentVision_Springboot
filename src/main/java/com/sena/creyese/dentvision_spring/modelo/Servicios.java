@@ -11,9 +11,9 @@ import jakarta.validation.constraints.Size;
  * sobre servicios dentales ofrecidos por la clínica, incluyendo nombre, descripción
  * detallada y precio. Facilita la gestión del catálogo de servicios y su facturación.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Catálogo completo de servicios dentales

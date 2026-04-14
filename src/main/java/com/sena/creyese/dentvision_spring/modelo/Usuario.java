@@ -13,9 +13,9 @@ import java.time.LocalDate;
  * incluyendo administradores, odontólogos, técnicos, auxiliares y pacientes.
  * Contiene la información básica de autenticación y perfil del usuario.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características principales:
  * - Autenticación con email y contraseña

@@ -12,9 +12,9 @@ import java.util.Date;
  * odontológicos prestados. Cada factura incluye fecha, valor, estado y está
  * asociada a un paciente específico.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Registro de transacciones financieras

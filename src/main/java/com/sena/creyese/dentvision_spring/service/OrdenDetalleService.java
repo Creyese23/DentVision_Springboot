@@ -15,11 +15,11 @@ import java.util.Optional;
  * incluyendo gestión de servicios, cantidades, precios y estados individuales.
  * Actúa como una capa de abstracción entre los controladores y el repositorio.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de detalles de órdenes de trabajo
  * - Cálculo de subtotales y precios individuales
  * - Gestión de cantidades y descuentos por detalle

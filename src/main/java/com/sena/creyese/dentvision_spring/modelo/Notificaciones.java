@@ -12,9 +12,9 @@ import java.time.LocalDateTime;
  * fecha y hora de creación, y relación con el usuario destinatario. Facilita la gestión
  * de alertas y comunicaciones importantes del sistema.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Gestión de notificaciones del sistema

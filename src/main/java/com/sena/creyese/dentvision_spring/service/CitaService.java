@@ -15,11 +15,11 @@ import java.util.Optional;
  * cancelación y seguimiento de citas. Actúa como una capa de abstracción
  * entre los controladores y el repositorio de citas.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de citas dentales
  * - Programación de citas con pacientes y odontólogos
  * - Gestión de estados de citas

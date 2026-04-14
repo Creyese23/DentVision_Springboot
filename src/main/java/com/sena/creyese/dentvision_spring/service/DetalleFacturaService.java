@@ -15,11 +15,11 @@ import java.util.Optional;
  * de servicios facturados, cantidades, precios unitarios, subtotales y descuentos.
  * Actúa como una capa de abstracción entre los controladores y el repositorio.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de detalles de facturas
  * - Cálculo automático de subtotales y totales
  * - Gestión de descuentos por detalle

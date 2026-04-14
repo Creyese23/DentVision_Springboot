@@ -16,9 +16,9 @@ import java.util.List;
  * de movimientos y gestión de existencias. Todos los endpoints están bajo la
  * ruta base /api/inventarios y siguen los estándares RESTful.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Endpoints disponibles:
  * - GET /api/inventarios: Obtener todos los registros de inventario

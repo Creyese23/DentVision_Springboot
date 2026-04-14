@@ -15,11 +15,11 @@ import java.util.Optional;
  * por documento, gestión de niveles de acceso y departamentos. Actúa como una
  * capa de abstracción entre los controladores y el repositorio de administradores.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de administradores
  * - Búsqueda por documento de identificación
  * - Gestión de niveles de acceso y departamentos

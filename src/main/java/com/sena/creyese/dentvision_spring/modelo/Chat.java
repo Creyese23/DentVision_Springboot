@@ -13,9 +13,9 @@ import java.time.LocalDateTime;
  * de los mensajes intercambiados entre usuarios del sistema. Cada mensaje incluye
  * timestamp, contenido, remitente, destinatario y estado de lectura.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Sistema de mensajería interna

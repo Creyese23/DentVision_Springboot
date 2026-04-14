@@ -3,7 +3,7 @@ package com.sena.creyese.dentvision_spring.modelo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * Entidad que representa un procedimiento dental en el sistema DentVision.
@@ -13,9 +13,9 @@ import java.util.Date;
  * fecha de realización y relación con la cita correspondiente. Facilita el seguimiento
  * de tratamientos y gestión de procedimientos clínicos.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Gestión completa de procedimientos dentales
@@ -43,8 +43,7 @@ public class Procedimiento {
     private boolean estado;
 
     /** Fecha de realización del procedimiento */
-    @Temporal(TemporalType.DATE)
-    private Date fecha;
+    private LocalDateTime fecha;
 
     /** Cita asociada a este procedimiento */
     @ManyToOne
@@ -110,7 +109,7 @@ public class Procedimiento {
      * 
      * @return Fecha de realización
      */
-    public Date getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
@@ -119,7 +118,7 @@ public class Procedimiento {
      * 
      * @param fecha Fecha a establecer
      */
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 

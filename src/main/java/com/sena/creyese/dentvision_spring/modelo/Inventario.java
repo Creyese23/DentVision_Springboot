@@ -13,9 +13,9 @@ import java.util.List;
  * fecha del registro y relación con múltiples insumos. Permite el seguimiento
  * detallado de las existencias y movimientos de materiales en la clínica.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
  * Características de la entidad:
  * - Registro de movimientos de inventario

@@ -15,11 +15,11 @@ import java.util.Optional;
  * asignación a técnicos y gestión de estados. Actúa como una capa de
  * abstracción entre los controladores y el repositorio de órdenes de trabajo.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de órdenes de trabajo
  * - Asignación de trabajos a técnicos dentales
  * - Seguimiento de estados de producción

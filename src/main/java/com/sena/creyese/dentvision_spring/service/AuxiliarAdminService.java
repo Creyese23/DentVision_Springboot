@@ -15,11 +15,11 @@ import java.util.Optional;
  * por documento, gestión de áreas de trabajo y turnos. Actúa como una capa
  * de abstracción entre los controladores y el repositorio de auxiliares.
  * 
- * @author SENA
+ * @author Creyese
  * @version 1.0
- * @since 2024
+ * @since 2026
  * 
- * Funcionalidades implementadas:
+ * Funcionalidades principales:
  * - Gestión CRUD de auxiliares administrativos
  * - Búsqueda por documento de identificación
  * - Gestión de áreas de trabajo y turnos
