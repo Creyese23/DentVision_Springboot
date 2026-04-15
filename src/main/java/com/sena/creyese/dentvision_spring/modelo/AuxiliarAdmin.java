@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Entidad que representa un auxiliar administrativo en el sistema DentVision.
@@ -65,7 +65,7 @@ public class AuxiliarAdmin {
 
     /** Fecha de nacimiento del auxiliar administrativo */
     @Column(name = "fecha_nacimiento", nullable = false)
-    private Date fechaNacimiento;
+    private LocalDate fechaNacimiento;
 
     /** Usuario asociado al auxiliar administrativo */
     @OneToOne
@@ -185,7 +185,7 @@ public class AuxiliarAdmin {
      * 
      * @return Fecha de nacimiento
      */
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -194,7 +194,7 @@ public class AuxiliarAdmin {
      * 
      * @param fechaNacimiento Fecha de nacimiento a establecer
      */
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
