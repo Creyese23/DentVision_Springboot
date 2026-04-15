@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Entidad que representa un administrador en el sistema DentVision.
@@ -59,7 +59,7 @@ public class Admin {
 
     /** Fecha de nacimiento del administrador */
     @Column(nullable = false)
-    private Date fecha_nacimiento;
+    private LocalDate fecha_nacimiento;
 
     /** Usuario asociado para autenticación y acceso al sistema */
     @OneToOne
@@ -161,7 +161,7 @@ public class Admin {
      * 
      * @return Fecha de nacimiento
      */
-    public Date getFecha_nacimiento() {
+    public LocalDate getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
@@ -170,7 +170,7 @@ public class Admin {
      * 
      * @param fecha_nacimiento Fecha de nacimiento a establecer
      */
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
+    public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 

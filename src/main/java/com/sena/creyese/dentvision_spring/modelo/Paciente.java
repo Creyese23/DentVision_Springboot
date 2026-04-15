@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * Entidad que representa un paciente en el sistema DentVision.
@@ -62,9 +61,9 @@ public class Paciente {
     @Column(nullable = false, length = 50)
     private String genero;
 
-    /** Fecha de nacimiento del paciente (obligatoria) */
+    /** Fecha de nacimiento del paciente */
     @Column(nullable = false)
-    private Date fecha_nacimiento;
+    private LocalDate fecha_nacimiento;
 
     /** Usuario asociado al paciente (relación uno a uno) */
     @OneToOne
@@ -184,7 +183,7 @@ public class Paciente {
      * 
      * @return Fecha de nacimiento
      */
-    public Date getFecha_nacimiento() {
+    public LocalDate getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
@@ -193,7 +192,7 @@ public class Paciente {
      * 
      * @param fecha_nacimiento Fecha de nacimiento a establecer
      */
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
+    public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
