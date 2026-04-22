@@ -1,5 +1,7 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
+import com.sena.creyese.dentvision_spring.enums.Estado;
+import com.sena.creyese.dentvision_spring.enums.EstadoDetalle;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -49,8 +51,9 @@ public class Factura {
     private Double valor;
 
     /** Estado de pago de la factura (true=pagada, false=pendiente) */
-    @Column(nullable = false, length = 50)
-    private boolean estado;
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private EstadoDetalle estado;
 
     /** Método de pago utilizado para la factura */
     @Column(nullable = false, length = 50)
@@ -156,7 +159,7 @@ public class Factura {
      * 
      * @return true si está pagada, false si está pendiente
      */
-    public boolean isEstado() {
+    public EstadoDetalle isEstado() {
         return estado;
     }
 
@@ -165,7 +168,7 @@ public class Factura {
      * 
      * @param estado Estado a establecer (true=pagada, false=pendiente)
      */
-    public void setEstado(boolean estado) {
+    public void setEstado(EstadoDetalle estado) {
         this.estado = estado;
     }
 

@@ -1,5 +1,6 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
+import com.sena.creyese.dentvision_spring.enums.Estado;
 import jakarta.persistence.*;
 
 /**
@@ -48,7 +49,8 @@ public class Insumo {
 
     /** Estado del insumo (true=activo, false=inactivo) */
     @Column(nullable = false)
-    private boolean estado;
+    @Enumerated(EnumType.STRING)
+    private Estado estado;
 
     /** Categoría del insumo */
     @Column(length = 100)
@@ -157,7 +159,7 @@ public class Insumo {
      * 
      * @return true si está activo, false si está inactivo
      */
-    public boolean isEstado() {
+    public Estado isEstado() {
         return estado;
     }
 
@@ -166,7 +168,7 @@ public class Insumo {
      * 
      * @param estado Estado a establecer
      */
-    public void setEstado(boolean estado) {
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
 

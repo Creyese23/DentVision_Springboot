@@ -1,5 +1,7 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
+import com.sena.creyese.dentvision_spring.enums.Estado;
+import com.sena.creyese.dentvision_spring.enums.EstadoDetalle;
 import jakarta.persistence.*;
 import java.util.Date;
 
@@ -48,8 +50,9 @@ public class ImagenesDiseno {
     private Date fechaCreacion;
 
     /** Estado de la imagen (APROBADA, PENDIENTE, RECHAZADA) */
-    @Column(nullable = false, length = 50)
-    private String estado;
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private EstadoDetalle estado;
 
     /** Notas adicionales sobre la imagen */
     @Column(length = 500)
@@ -169,7 +172,7 @@ public class ImagenesDiseno {
      * 
      * @return Estado de la imagen
      */
-    public String getEstado() {
+    public EstadoDetalle getEstado() {
         return estado;
     }
 
@@ -178,7 +181,7 @@ public class ImagenesDiseno {
      * 
      * @param estado Estado a establecer
      */
-    public void setEstado(String estado) {
+    public void setEstado(EstadoDetalle estado) {
         this.estado = estado;
     }
 

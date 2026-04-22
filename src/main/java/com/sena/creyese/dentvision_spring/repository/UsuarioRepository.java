@@ -1,6 +1,6 @@
 package com.sena.creyese.dentvision_spring.repository;
 
-import com.sena.creyese.dentvision_spring.enums.EstadoUsuario;
+import com.sena.creyese.dentvision_spring.enums.Estado;
 import com.sena.creyese.dentvision_spring.modelo.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -56,5 +56,5 @@ public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
      * @param estado Estado del usuario a buscar
      * @return Lista de usuarios con ese estado
      */
-    List<Usuario> findByEstado(EstadoUsuario estado);
+    List<Usuario> findByEstado(Estado estado);
 }

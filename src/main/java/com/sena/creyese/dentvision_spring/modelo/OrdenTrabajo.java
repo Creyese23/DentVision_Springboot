@@ -1,5 +1,6 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
+import com.sena.creyese.dentvision_spring.enums.Estado;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -38,7 +39,8 @@ public class OrdenTrabajo {
 
     /** Estado de la orden (true: activa, false: completada/cancelada) */
     @Column(nullable = false)
-    private Boolean estado;
+    @Enumerated(EnumType.STRING)
+    private Estado estado;
 
     /** Observaciones adicionales sobre la orden de trabajo */
     @Column(nullable = false, length = 50)
@@ -100,7 +102,7 @@ public class OrdenTrabajo {
      * 
      * @return true si está activa, false si está completada/cancelada
      */
-    public Boolean getEstado() {
+    public Estado getEstado() {
         return estado;
     }
 
@@ -109,7 +111,7 @@ public class OrdenTrabajo {
      * 
      * @param estado Estado a establecer (true: activa, false: completada/cancelada)
      */
-    public void setEstado(Boolean estado) {
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
 

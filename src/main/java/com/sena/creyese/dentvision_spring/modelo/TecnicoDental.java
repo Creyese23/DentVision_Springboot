@@ -1,5 +1,6 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
+import com.sena.creyese.dentvision_spring.enums.Estado;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -82,7 +83,8 @@ public class TecnicoDental {
 
     /** Estado del técnico dental (true=activo, false=inactivo) */
     @Column(nullable = false)
-    private boolean estado;
+    @Enumerated(EnumType.STRING)
+    private Estado estado;
 
     /** Años de experiencia del técnico dental */
     @Column(nullable = false)
@@ -272,7 +274,7 @@ public class TecnicoDental {
      * 
      * @return true si está activo, false si está inactivo
      */
-    public boolean isEstado() {
+    public Estado isEstado() {
         return estado;
     }
 
@@ -281,7 +283,7 @@ public class TecnicoDental {
      * 
      * @param estado Estado a establecer
      */
-    public void setEstado(boolean estado) {
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
 
