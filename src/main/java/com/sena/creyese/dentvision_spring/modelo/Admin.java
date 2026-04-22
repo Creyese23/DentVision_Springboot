@@ -57,9 +57,36 @@ public class Admin {
     @Column(nullable = false, length = 50)
     private String direccion;
 
+    /** Nombres del administrador */
+    @NotBlank(message = "Es obligatorio diligenciar los nombres")
+    @Size(max=100, message = "Maximo 100 caracteres")
+    @Column(nullable = false, length = 100)
+    private String nombres;
+
+    /** Apellidos del administrador */
+    @NotBlank(message = "Es obligatorio diligenciar los apellidos")
+    @Size(max=100, message = "Maximo 100 caracteres")
+    @Column(nullable = false, length = 100)
+    private String apellidos;
+
     /** Fecha de nacimiento del administrador */
     @Column(nullable = false)
     private LocalDate fecha_nacimiento;
+
+    /** Nivel de acceso del administrador */
+    @NotBlank(message = "Es obligatorio diligenciar el nivel de acceso")
+    @Size(max=50, message = "Maximo 50 caracteres")
+    @Column(nullable = false, length = 50)
+    private String nivelAcceso;
+
+    /** Departamento al que pertenece el administrador */
+    @Size(max=100, message = "Maximo 100 caracteres")
+    @Column(length = 100)
+    private String departamento;
+
+    /** Estado del administrador (activo/inactivo) */
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean estado;
 
     /** Usuario asociado para autenticación y acceso al sistema */
     @OneToOne
@@ -157,6 +184,42 @@ public class Admin {
     }
 
     /**
+     * Obtiene los nombres del administrador.
+     * 
+     * @return Nombres del administrador
+     */
+    public String getNombres() {
+        return nombres;
+    }
+
+    /**
+     * Establece los nombres del administrador.
+     * 
+     * @param nombres Nombres a establecer
+     */
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    /**
+     * Obtiene los apellidos del administrador.
+     * 
+     * @return Apellidos del administrador
+     */
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    /**
+     * Establece los apellidos del administrador.
+     * 
+     * @param apellidos Apellidos a establecer
+     */
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    /**
      * Obtiene la fecha de nacimiento del administrador.
      * 
      * @return Fecha de nacimiento
@@ -172,6 +235,60 @@ public class Admin {
      */
     public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+    /**
+     * Obtiene el nivel de acceso del administrador.
+     * 
+     * @return Nivel de acceso
+     */
+    public String getNivelAcceso() {
+        return nivelAcceso;
+    }
+
+    /**
+     * Establece el nivel de acceso del administrador.
+     * 
+     * @param nivelAcceso Nivel de acceso a establecer
+     */
+    public void setNivelAcceso(String nivelAcceso) {
+        this.nivelAcceso = nivelAcceso;
+    }
+
+    /**
+     * Obtiene el departamento del administrador.
+     * 
+     * @return Departamento
+     */
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    /**
+     * Establece el departamento del administrador.
+     * 
+     * @param departamento Departamento a establecer
+     */
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    /**
+     * Obtiene el estado del administrador.
+     * 
+     * @return true si está activo, false si está inactivo
+     */
+    public boolean isEstado() {
+        return estado;
+    }
+
+    /**
+     * Establece el estado del administrador.
+     * 
+     * @param estado Estado a establecer (true=activo, false=inactivo)
+     */
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
     /**

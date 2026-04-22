@@ -46,6 +46,18 @@ public class TecnicoDental {
     @Column(unique = true, nullable = false, length = 50)
     private String documento;
 
+    /** Apellidos del técnico dental */
+    @NotBlank(message = "Es obligatorio diligenciar apellidos")
+    @Size(max=100, message = "Maximo 100 caracteres")
+    @Column(nullable = false, length = 100)
+    private String apellidos;
+
+    /** Nombres del técnico dental */
+    @NotBlank(message = "Es obligatorio diligenciar nombres")
+    @Size(max=100, message = "Maximo 100 caracteres")
+    @Column(nullable = false, length = 100)
+    private String nombres;
+
     /** Teléfono de contacto del técnico dental */
     @NotBlank(message = "Es obligatorio diligenciar telefono")
     @Size(max=50, message = "Maximo 50 caracteres")
@@ -67,6 +79,26 @@ public class TecnicoDental {
     /** Fecha de nacimiento del técnico dental */
     @Column(name = "fecha_nacimiento", nullable = false)
     private LocalDate fecha_nacimiento;
+
+    /** Estado del técnico dental (true=activo, false=inactivo) */
+    @Column(nullable = false)
+    private boolean estado;
+
+    /** Años de experiencia del técnico dental */
+    @Column(nullable = false)
+    private int experienciaYears;
+
+    /** Disponibilidad del técnico dental (true=disponible, false=no disponible) */
+    @Column(nullable = false)
+    private boolean disponibilidad;
+
+    /** Especialización del técnico dental */
+    @Column(length = 100)
+    private String especializacion;
+
+    /** Número de certificado del técnico dental */
+    @Column(length = 50)
+    private String numeroCertificado;
 
     /** Usuario asociado al técnico dental */
     @OneToOne
@@ -125,6 +157,42 @@ public class TecnicoDental {
      */
     public void setDocumento(String documento) {
         this.documento = documento;
+    }
+
+    /**
+     * Obtiene los apellidos del técnico dental.
+     * 
+     * @return Apellidos del técnico dental
+     */
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    /**
+     * Establece los apellidos del técnico dental.
+     * 
+     * @param apellidos Apellidos a establecer
+     */
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    /**
+     * Obtiene los nombres del técnico dental.
+     * 
+     * @return Nombres del técnico dental
+     */
+    public String getNombres() {
+        return nombres;
+    }
+
+    /**
+     * Establece los nombres del técnico dental.
+     * 
+     * @param nombres Nombres a establecer
+     */
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     /**
@@ -197,6 +265,96 @@ public class TecnicoDental {
      */
     public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+    /**
+     * Obtiene el estado del técnico dental.
+     * 
+     * @return true si está activo, false si está inactivo
+     */
+    public boolean isEstado() {
+        return estado;
+    }
+
+    /**
+     * Establece el estado del técnico dental.
+     * 
+     * @param estado Estado a establecer
+     */
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    /**
+     * Obtiene los años de experiencia del técnico dental.
+     * 
+     * @return Años de experiencia
+     */
+    public int getExperienciaYears() {
+        return experienciaYears;
+    }
+
+    /**
+     * Establece los años de experiencia del técnico dental.
+     * 
+     * @param experienciaYears Años de experiencia a establecer
+     */
+    public void setExperienciaYears(int experienciaYears) {
+        this.experienciaYears = experienciaYears;
+    }
+
+    /**
+     * Obtiene la disponibilidad del técnico dental.
+     * 
+     * @return true si está disponible, false si no
+     */
+    public boolean isDisponibilidad() {
+        return disponibilidad;
+    }
+
+    /**
+     * Establece la disponibilidad del técnico dental.
+     * 
+     * @param disponibilidad Disponibilidad a establecer
+     */
+    public void setDisponibilidad(boolean disponibilidad) {
+        this.disponibilidad = disponibilidad;
+    }
+
+    /**
+     * Obtiene la especialización del técnico dental.
+     * 
+     * @return Especialización del técnico dental
+     */
+    public String getEspecializacion() {
+        return especializacion;
+    }
+
+    /**
+     * Establece la especialización del técnico dental.
+     * 
+     * @param especializacion Especialización a establecer
+     */
+    public void setEspecializacion(String especializacion) {
+        this.especializacion = especializacion;
+    }
+
+    /**
+     * Obtiene el número de certificado del técnico dental.
+     * 
+     * @return Número de certificado
+     */
+    public String getNumeroCertificado() {
+        return numeroCertificado;
+    }
+
+    /**
+     * Establece el número de certificado del técnico dental.
+     * 
+     * @param numeroCertificado Número de certificado a establecer
+     */
+    public void setNumeroCertificado(String numeroCertificado) {
+        this.numeroCertificado = numeroCertificado;
     }
 
     /**

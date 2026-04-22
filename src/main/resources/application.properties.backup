@@ -16,9 +16,6 @@
 # Nombre identificador de la aplicaci贸n Spring Boot
 spring.application.name=DentVision_Spring
 
-# Perfil activo por defecto (desarrollo con H2)
-spring.profiles.active=dev
-
 # ------------------------------
 # CONFIGURACI脫N DEL SERVIDOR
 # ------------------------------
@@ -26,25 +23,25 @@ spring.profiles.active=dev
 server.port=8080
 
 # ------------------------------
-# CONFIGURACI脫N DE BASE DE DATOS MYSQL
+# CONFIGURACI覰 DE BASE DE DATOS MYSQL
 # ------------------------------
 # URL de conexi贸n a la base de datos MySQL
 # Se utiliza variable de entorno ${URL} para mantener la configuraci贸n segura
-spring.datasource.url=jdbc:mysql://db-dentvision.clg6gcmkex9d.us-east-2.rds.amazonaws.com:3306/dentvision
+spring.datasource.url=jdbc:mysql://dentvision1.clg6gcmkex9d.us-east-2.rds.amazonaws.com:3306/dentvision
 
 # Usuario de la base de datos
 # Se utiliza variable de entorno ${DB_HOST} para mantener la configuraci贸n segura
 spring.datasource.username=admin
 
-# Contrase帽a de la base de datos
+# Contrase馻 de la base de datos
 # Se utiliza variable de entorno ${DB_PASSWORD} para mantener la configuraci贸n segura
-spring.datasource.password=Rr233035*
+spring.datasource.password=0ll6eWFUV01B3EJLqgP8
 
 # Driver JDBC para MySQL 8.x
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 # ------------------------------
-# CONFIGURACI脫N DE JPA / HIBERNATE
+# CONFIGURACI覰 DE JPA / HIBERNATE
 # ------------------------------
 # Estrategia de DDL (Data Definition Language)
 # - update: Actualiza el esquema autom谩ticamente al iniciar la aplicaci贸n

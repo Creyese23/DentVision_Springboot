@@ -38,6 +38,27 @@ public class OrdenDetalle {
     @Column(nullable = false)
     private int cantidad;
 
+    /** Estado del detalle (COMPLETADO, PENDIENTE, etc.) */
+    @Column(nullable = false, length = 50)
+    private String estado;
+
+    /** Precio unitario del detalle */
+    @Column(nullable = false)
+    private double precioUnitario;
+
+    /** Subtotal del detalle (cantidad * precio unitario) */
+    @Column(nullable = false)
+    private double subtotal;
+
+    /** Descuento aplicado al detalle */
+    @Column(nullable = false)
+    private double descuento;
+
+    /** Servicio asociado a este detalle */
+    @ManyToOne
+    @JoinColumn(name = "idServicio")
+    private Servicios servicio;
+
     /** Orden de trabajo principal a la que pertenece este detalle */
     @ManyToOne
     @JoinColumn(name = "idOrden")
@@ -98,7 +119,97 @@ public class OrdenDetalle {
     }
 
     /**
-     * Obtiene la orden de trabajo asociada.
+     * Obtiene el estado del detalle.
+     * 
+     * @return Estado del detalle
+     */
+    public String getEstado() {
+        return estado;
+    }
+
+    /**
+     * Establece el estado del detalle.
+     * 
+     * @param estado Estado a establecer
+     */
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    /**
+     * Obtiene el precio unitario del detalle.
+     * 
+     * @return Precio unitario
+     */
+    public double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    /**
+     * Establece el precio unitario del detalle.
+     * 
+     * @param precioUnitario Precio unitario a establecer
+     */
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
+    /**
+     * Obtiene el subtotal del detalle.
+     * 
+     * @return Subtotal del detalle
+     */
+    public double getSubtotal() {
+        return subtotal;
+    }
+
+    /**
+     * Establece el subtotal del detalle.
+     * 
+     * @param subtotal Subtotal a establecer
+     */
+    public void setSubtotal(double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    /**
+     * Obtiene el descuento del detalle.
+     * 
+     * @return Descuento aplicado
+     */
+    public double getDescuento() {
+        return descuento;
+    }
+
+    /**
+     * Establece el descuento del detalle.
+     * 
+     * @param descuento Descuento a establecer
+     */
+    public void setDescuento(double descuento) {
+        this.descuento = descuento;
+    }
+
+    /**
+     * Obtiene el servicio asociado.
+     * 
+     * @return Servicio relacionado
+     */
+    public Servicios getServicio() {
+        return servicio;
+    }
+
+    /**
+     * Establece el servicio asociado.
+     * 
+     * @param servicio Servicio a establecer
+     */
+    public void setServicio(Servicios servicio) {
+        this.servicio = servicio;
+    }
+
+    /**
+     * Obtiene la orden de trabajo principal.
      * 
      * @return Orden de trabajo relacionada
      */

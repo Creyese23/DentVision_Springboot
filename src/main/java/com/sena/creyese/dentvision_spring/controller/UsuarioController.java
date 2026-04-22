@@ -34,7 +34,7 @@ import java.util.List;
  * - Gestión de errores y respuestas 404
  */
 @RestController
-@RequestMapping("/api/usuarios")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
     /** Servicio de negocio para la gestión de usuarios */
@@ -97,6 +97,7 @@ public class UsuarioController {
     public ResponseEntity<Usuario> crear(@Valid @RequestBody Usuario usuario) {
         Usuario nuevoUsuario = usuarioService.guardar(usuario);
         return ResponseEntity.ok(nuevoUsuario);
+
     }
 
     /**
@@ -120,9 +121,7 @@ public class UsuarioController {
                     usuarioExistente.setNombres(usuario.getNombres());
                     usuarioExistente.setApellidos(usuario.getApellidos());
                     usuarioExistente.setEmail(usuario.getEmail());
-                    usuarioExistente.setConfirmar_email(usuario.getConfirmar_email());
                     usuarioExistente.setPassword(usuario.getPassword());
-                    usuarioExistente.setConfirmar_password(usuario.getConfirmar_password());
                     usuarioExistente.setEstado(usuario.getEstado());
                     usuarioExistente.setFecha_registro(usuario.getFecha_registro());
                     usuarioExistente.setRol(usuario.getRol());

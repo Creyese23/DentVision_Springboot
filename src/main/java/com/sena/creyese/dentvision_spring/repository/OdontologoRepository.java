@@ -14,7 +14,7 @@ import java.util.Optional;
  * 
  * Esta interfaz proporciona métodos personalizados para realizar operaciones de base de datos
  * sobre la entidad Odontologo, incluyendo consultas por documento/especialidad,
- * gestión de estados, búsqueda por licencia y consultas por email de usuario.
+ * búsqueda por licencia y consultas por email de usuario.
  * 
  * @author Creyese
  * @version 1.0
@@ -22,11 +22,9 @@ import java.util.Optional;
  * 
  * Funcionalidades principales:
  * - Búsqueda por documento de identidad
- * - Consulta por nombres, apellidos y especialidad
- * - Filtrado por estado (activos/inactivos)
+ * - Consulta por especialidad
  * - Búsqueda por número de licencia
  * - Consultas por email de usuario asociado
- * - Conteo de odontólogos activos
  */
 @Repository
 public interface OdontologoRepository extends JpaRepository<Odontologo, Long> {
@@ -40,22 +38,6 @@ public interface OdontologoRepository extends JpaRepository<Odontologo, Long> {
     Optional<Odontologo> findByDocumento(String documento);
     
     /**
-     * Busca odontólogos cuyos nombres contengan el texto especificado (ignora mayúsculas/minúsculas).
-     * 
-     * @param nombres Texto a buscar en los nombres
-     * @return Lista de odontólogos que coinciden con la búsqueda
-     */
-    List<Odontologo> findByNombresContainingIgnoreCase(String nombres);
-    
-    /**
-     * Busca odontólogos cuyos apellidos contengan el texto especificado (ignora mayúsculas/minúsculas).
-     * 
-     * @param apellidos Texto a buscar en los apellidos
-     * @return Lista de odontólogos que coinciden con la búsqueda
-     */
-    List<Odontologo> findByApellidosContainingIgnoreCase(String apellidos);
-    
-    /**
      * Busca odontólogos cuya especialidad contenga el texto especificado (ignora mayúsculas/minúsculas).
      * 
      * @param especialidad Especialidad a buscar (ORTODONCIA, ENDODONCIA, CIRUGÍA)
@@ -64,42 +46,13 @@ public interface OdontologoRepository extends JpaRepository<Odontologo, Long> {
     List<Odontologo> findByEspecialidadContainingIgnoreCase(String especialidad);
     
     /**
-     * Obtiene todos los odontólogos con estado activo (true).
-     * 
-     * @return Lista de odontólogos activos
-     */
-    List<Odontologo> findByEstadoTrue();
-    
-    /**
-     * Obtiene todos los odontólogos con estado inactivo (false).
-     * 
-     * @return Lista de odontólogos inactivos
-     */
-    List<Odontologo> findByEstadoFalse();
-    
-    /**
-     * Obtiene todos los odontólogos activos ordenados alfabéticamente por nombres.
-     * 
-     * @return Lista de odontólogos activos ordenados por nombres
-     */
-    @Query("SELECT o FROM Odontologo o WHERE o.estado = true ORDER BY o.nombres ASC")
-    List<Odontologo> findActivosOrderByNombres();
-    
-    /**
-     * Cuenta el número total de odontólogos activos en el sistema.
-     * 
-     * @return Número de odontólogos con estado true
-     */
-    @Query("SELECT COUNT(o) FROM Odontologo o WHERE o.estado = true")
-    Long countOdontologosActivos();
-    
-    /**
      * Busca odontólogos cuyo número de licencia contenga el texto especificado (ignora mayúsculas/minúsculas).
      * 
-     * @param numeroLicencia Número de licencia a buscar
+     * @param N_Licencia Número de licencia a buscar
      * @return Lista de odontólogos que coinciden con la búsqueda
      */
-    List<Odontologo> findByNumeroLicenciaContainingIgnoreCase(String numeroLicencia);
+    @Query("SELECT o FROM Odontologo o WHERE LOWER(o.N_Licencia) LIKE LOWER(CONCAT('%', :N_Licencia, '%'))")
+    List<Odontologo> findByN_LicenciaContainingIgnoreCase(@Param("N_Licencia") String N_Licencia);
     
     /**
      * Busca un odontólogo por el email de su usuario asociado.
