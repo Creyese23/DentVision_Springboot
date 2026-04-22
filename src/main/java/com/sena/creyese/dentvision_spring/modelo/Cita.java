@@ -1,5 +1,6 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
+import com.sena.creyese.dentvision_spring.enums.Estado;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -43,7 +44,8 @@ public class Cita {
     
     /** Estado actual de la cita (true=activa, false=cancelada/completada) */
     @Column(nullable = false)
-    private boolean estado;
+    @Enumerated(EnumType.STRING)
+    private Estado estado;
     
     /** Motivo o descripción del propósito de la cita */
     @Column(nullable = false, length = 200)
@@ -118,7 +120,7 @@ public class Cita {
      * 
      * @return true si la cita está activa, false si está cancelada o completada
      */
-    public boolean getEstado() {
+    public Estado getEstado() {
         return estado;
     }
 
@@ -127,7 +129,7 @@ public class Cita {
      * 
      * @param estado Estado a establecer (true=activa, false=cancelada/completada)
      */
-    public void setEstado(boolean estado) {
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
 

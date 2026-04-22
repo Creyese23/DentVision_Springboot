@@ -18,7 +18,7 @@ package com.sena.creyese.dentvision_spring.enums;
  * Cada estado define claramente la condición del usuario y sus permisos
  * de acceso al sistema.
  */
-public enum EstadoUsuario {
+public enum Estado {
     
     /**
      * Estado ACTIVO del usuario.

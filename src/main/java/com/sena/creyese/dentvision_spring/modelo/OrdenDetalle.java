@@ -1,5 +1,7 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
+import com.sena.creyese.dentvision_spring.enums.Estado;
+import com.sena.creyese.dentvision_spring.enums.EstadoDetalle;
 import jakarta.persistence.*;
 
 /**
@@ -38,9 +40,10 @@ public class OrdenDetalle {
     @Column(nullable = false)
     private int cantidad;
 
-    /** Estado del detalle (COMPLETADO, PENDIENTE, etc.) */
-    @Column(nullable = false, length = 50)
-    private String estado;
+    /** Estado del detalle (COMPLETADO, PENDIENTE, FINALIZADO) */
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private EstadoDetalle estado;
 
     /** Precio unitario del detalle */
     @Column(nullable = false)
@@ -123,7 +126,7 @@ public class OrdenDetalle {
      * 
      * @return Estado del detalle
      */
-    public String getEstado() {
+    public EstadoDetalle getEstado() {
         return estado;
     }
 
@@ -132,7 +135,7 @@ public class OrdenDetalle {
      * 
      * @param estado Estado a establecer
      */
-    public void setEstado(String estado) {
+    public void setEstado(EstadoDetalle estado) {
         this.estado = estado;
     }
 

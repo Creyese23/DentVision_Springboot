@@ -1,5 +1,6 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
+import com.sena.creyese.dentvision_spring.enums.Estado;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -85,8 +86,9 @@ public class Admin {
     private String departamento;
 
     /** Estado del administrador (activo/inactivo) */
-    @Column(nullable = false, columnDefinition = "TINYINT(1)")
-    private boolean estado;
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Estado estado;
 
     /** Usuario asociado para autenticación y acceso al sistema */
     @OneToOne
@@ -278,7 +280,7 @@ public class Admin {
      * 
      * @return true si está activo, false si está inactivo
      */
-    public boolean isEstado() {
+    public Estado isEstado() {
         return estado;
     }
 
@@ -287,7 +289,7 @@ public class Admin {
      * 
      * @param estado Estado a establecer (true=activo, false=inactivo)
      */
-    public void setEstado(boolean estado) {
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
 

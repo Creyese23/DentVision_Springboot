@@ -1,5 +1,7 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
+import com.sena.creyese.dentvision_spring.enums.Estado;
+import com.sena.creyese.dentvision_spring.enums.EstadoDetalle;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -38,7 +40,8 @@ public class Entrega {
     
     /** Estado de la entrega (true: completada, false: pendiente) */
     @Column(nullable = false)
-    private boolean estado;
+    @Enumerated(EnumType.STRING)
+    private EstadoDetalle estado;
     
     /** Observaciones adicionales sobre la entrega */
     @Column(nullable = false)
@@ -90,7 +93,7 @@ public class Entrega {
      * 
      * @return true si está completada, false si está pendiente
      */
-    public boolean isEstado() {
+    public EstadoDetalle isEstado() {
         return estado;
     }
 
@@ -99,7 +102,7 @@ public class Entrega {
      * 
      * @param estado Estado a establecer (true: completada, false: pendiente)
      */
-    public void setEstado(boolean estado) {
+    public void setEstado(EstadoDetalle estado) {
         this.estado = estado;
     }
 
