@@ -2,7 +2,6 @@ package com.sena.creyese.dentvision_spring.config;
 
 import com.sena.creyese.dentvision_spring.repository.*;
 import com.sena.creyese.dentvision_spring.modelo.*;
-import com.sena.creyese.dentvision_spring.enums.TipoRol;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
@@ -12,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Sort;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -136,7 +136,9 @@ public class MockRepositoryConfig {
     }
 
     // Implementaciones Mock básicas
-    private static class AdminRepositoryMock implements AdminRepository {
+    public static class AdminRepositoryMock implements AdminRepository {
+        
+        public AdminRepositoryMock() {}
         @Override
         public List<Admin> findAll() { return new ArrayList<>(); }
         @Override
@@ -228,7 +230,9 @@ public class MockRepositoryConfig {
     }
 
     // Clases mock similares para los otros repositories...
-    private static class AuxiliarAdminRepositoryMock implements AuxiliarAdminRepository {
+    public static class AuxiliarAdminRepositoryMock implements AuxiliarAdminRepository {
+        
+        public AuxiliarAdminRepositoryMock() {}
         @Override
         public List<AuxiliarAdmin> findAll() { return new ArrayList<>(); }
         @Override
@@ -297,31 +301,33 @@ public class MockRepositoryConfig {
         // Custom methods from AuxiliarAdminRepository
         @Override
         public Optional<AuxiliarAdmin> findByDocumento(String documento) { return Optional.empty(); }
-        @Override
+
         public List<AuxiliarAdmin> findByNombresContainingIgnoreCase(String nombres) { return new ArrayList<>(); }
-        @Override
+
         public List<AuxiliarAdmin> findByApellidosContainingIgnoreCase(String apellidos) { return new ArrayList<>(); }
-        @Override
+
         public List<AuxiliarAdmin> findByEstadoTrue() { return new ArrayList<>(); }
-        @Override
+
         public List<AuxiliarAdmin> findByEstadoFalse() { return new ArrayList<>(); }
-        @Override
+
         public List<AuxiliarAdmin> findActivosOrderByNombres() { return new ArrayList<>(); }
-        @Override
+
         public Long countAuxiliaresActivos() { return 0L; }
-        @Override
+
         public List<AuxiliarAdmin> findByAreaTrabajoContainingIgnoreCase(String areaTrabajo) { return new ArrayList<>(); }
-        @Override
+
         public Optional<AuxiliarAdmin> findByUsuarioEmail(String email) { return Optional.empty(); }
-        @Override
+
         public List<AuxiliarAdmin> findByTurnoContainingIgnoreCase(String turno) { return new ArrayList<>(); }
-        @Override
+
         public List<AuxiliarAdmin> findAuxiliaresByAreaYActivos(String area) { return new ArrayList<>(); }
-        @Override
+
         public List<AuxiliarAdmin> findByExperienciaYearsGreaterThan(Integer years) { return new ArrayList<>(); }
     }
 
-    private static class CitaRepositoryMock implements CitaRepository {
+    public static class CitaRepositoryMock implements CitaRepository {
+        
+        public CitaRepositoryMock() {}
         @Override
         public List<Cita> findAll() { return new ArrayList<>(); }
         @Override
@@ -388,21 +394,27 @@ public class MockRepositoryConfig {
         public <S extends Cita, R> R findBy(Example<S> example, java.util.function.Function<org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery<S>, R> queryFunction) { return queryFunction.apply(null); }
         
         // Custom methods from CitaRepository
-        @Override
+
         public List<Cita> findByPacienteOrderByFechaAscHoraAsc(com.sena.creyese.dentvision_spring.modelo.Paciente paciente) { return new ArrayList<>(); }
-        @Override
+
         public List<Cita> findByOdontologoOrderByFechaAscHoraAsc(com.sena.creyese.dentvision_spring.modelo.Odontologo odontologo) { return new ArrayList<>(); }
-        @Override
+
         public List<Cita> findByFechaOrderByHoraAsc(java.time.LocalDate fecha) { return new ArrayList<>(); }
-        @Override
+
         public List<Cita> findByFechaBetweenOrderByFechaAscHoraAsc(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        @Override
+
         public List<Cita> findByOdontologoAndFechaOrderByHoraAsc(com.sena.creyese.dentvision_spring.modelo.Odontologo odontologo, java.time.LocalDate fecha) { return new ArrayList<>(); }
-        @Override
+
         public List<Cita> findByEstadoTrueOrderByFechaAscHoraAsc() { return new ArrayList<>(); }
-        @Override
+
         public List<Cita> findByEstadoFalseOrderByFechaAscHoraAsc() { return new ArrayList<>(); }
+
         @Override
+        public List<Cita> findByEstadoTrue() { return new ArrayList<>(); }
+        
+        @Override
+        public List<Cita> findByEstadoFalse() { return new ArrayList<>(); }
+
         public Cita findByOdontologoAndFechaAndHora(Long idOdontologo, java.time.LocalDate fecha, java.time.LocalTime hora) { return null; }
         @Override
         public Long countByOdontologoAndFecha(Long idOdontologo, java.time.LocalDate fecha) { return 0L; }
@@ -410,9 +422,26 @@ public class MockRepositoryConfig {
         public List<Cita> findProximasCitasByPaciente(Long idPaciente) { return new ArrayList<>(); }
         @Override
         public List<Cita> findByMotivoContainingIgnoreCase(String motivo) { return new ArrayList<>(); }
+        @Override
+        public List<Cita> findByPaciente(Paciente paciente) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'findByPaciente'");
+        }
+        @Override
+        public List<Cita> findByOdontologo(Odontologo odontologo) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'findByOdontologo'");
+        }
+        @Override
+        public List<Cita> findByFecha(LocalDate fecha) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'findByFecha'");
+        }
     }
 
-    private static class DetalleFacturaRepositoryMock implements DetalleFacturaRepository {
+    public static class DetalleFacturaRepositoryMock implements DetalleFacturaRepository {
+        
+        public DetalleFacturaRepositoryMock() {}
         @Override
         public List<DetalleFactura> findAll() { return new ArrayList<>(); }
         @Override
@@ -479,35 +508,37 @@ public class MockRepositoryConfig {
         public <S extends DetalleFactura, R> R findBy(Example<S> example, java.util.function.Function<org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery<S>, R> queryFunction) { return queryFunction.apply(null); }
         
         // Custom methods from DetalleFacturaRepository
-        @Override
+
         public List<DetalleFactura> findByFacturaId(Long facturaId) { return new ArrayList<>(); }
-        @Override
+
         public List<DetalleFactura> findByPacienteId(Long pacienteId) { return new ArrayList<>(); }
-        @Override
+
         public List<DetalleFactura> findByServicioOrderByFacturaFechaDesc(com.sena.creyese.dentvision_spring.modelo.Servicios servicio) { return new ArrayList<>(); }
-        @Override
+
         public List<DetalleFactura> findByFacturaOrderByServicioNombre(com.sena.creyese.dentvision_spring.modelo.Factura factura) { return new ArrayList<>(); }
-        @Override
+
         public Long countDetallesByFactura(Long facturaId) { return 0L; }
-        @Override
+
         public Double sumSubtotalByFactura(Long facturaId) { return 0.0; }
-        @Override
+
         public Double sumDescuentosByFactura(Long facturaId) { return 0.0; }
-        @Override
+
         public List<DetalleFactura> findDetallesConDescuento() { return new ArrayList<>(); }
         @Override
         public List<DetalleFactura> findByCantidadGreaterThan(Integer cantidad) { return new ArrayList<>(); }
-        @Override
+
         public List<DetalleFactura> findBySubtotalBetween(Double min, Double max) { return new ArrayList<>(); }
-        @Override
+
         public List<DetalleFactura> findByPrecioUnitarioBetween(Double min, Double max) { return new ArrayList<>(); }
-        @Override
+
         public List<DetalleFactura> findByServicioId(Long idServicio) { return new ArrayList<>(); }
-        @Override
+
         public List<DetalleFactura> findByDescripcionContainingIgnoreCase(String descripcion) { return new ArrayList<>(); }
     }
 
-    private static class EntregaRepositoryMock implements EntregaRepository {
+    public static class EntregaRepositoryMock implements EntregaRepository {
+        
+        public EntregaRepositoryMock() {}
         @Override
         public List<Entrega> findAll() { return new ArrayList<>(); }
         @Override
@@ -570,33 +601,60 @@ public class MockRepositoryConfig {
         public <S extends Entrega> Optional<S> findOne(org.springframework.data.domain.Example<S> example) { return Optional.empty(); }
         
         // Custom methods from EntregaRepository
-        @Override
+
         public List<Entrega> findByTecnicoDentalOrderByFechaEntregaDesc(com.sena.creyese.dentvision_spring.modelo.TecnicoDental tecnicoDental) { return new ArrayList<>(); }
-        @Override
+
         public List<Entrega> findByOrdenTrabajoOrderByFechaEntregaDesc(com.sena.creyese.dentvision_spring.modelo.OrdenTrabajo ordenTrabajo) { return new ArrayList<>(); }
-        @Override
+
         public List<Entrega> findByFechaEntregaBetweenOrderByFechaEntregaDesc(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        @Override
+
         public List<Entrega> findByEstadoOrderByFechaEntregaDesc(String estado) { return new ArrayList<>(); }
-        @Override
+
         public List<Entrega> findByEstadoAndFechaEntregaBetweenOrderByFechaEntregaDesc(String estado, java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        @Override
+
         public List<Entrega> findEntregasPendientes() { return new ArrayList<>(); }
-        @Override
+
         public List<Entrega> findEntregasRealizadas() { return new ArrayList<>(); }
-        @Override
+
         public Long countEntregasPendientes() { return 0L; }
-        @Override
+
         public List<Entrega> findByFechaEntrega(java.time.LocalDate fecha) { return new ArrayList<>(); }
-        @Override
+
         public List<Entrega> findByPaciente(Long idPaciente) { return new ArrayList<>(); }
-        @Override
+
         public List<Entrega> findByNotasContainingIgnoreCase(String notas) { return new ArrayList<>(); }
         @Override
         public List<Entrega> findAll(org.springframework.data.domain.Sort sort) { return new ArrayList<>(); }
+        @Override
+        public List<Entrega> findByOrden(OrdenTrabajo ordenTrabajo) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'findByOrden'");
+        }
+        @Override
+        public List<Entrega> findByEstado(boolean estado) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'findByEstado'");
+        }
+        @Override
+        public List<Entrega> findByEstadoTrue() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'findByEstadoTrue'");
+        }
+        @Override
+        public List<Entrega> findByEstadoFalse() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'findByEstadoFalse'");
+        }
+        @Override
+        public List<Entrega> findByObservacionesContainingIgnoreCase(String observaciones) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'findByObservacionesContainingIgnoreCase'");
+        }
     }
 
-    private static class FacturaRepositoryMock implements FacturaRepository {
+    public static class FacturaRepositoryMock implements FacturaRepository {
+        
+        public FacturaRepositoryMock() {}
         @Override
         public List<Factura> findAll() { return new ArrayList<>(); }
         @Override
@@ -663,12 +721,11 @@ public class MockRepositoryConfig {
         public <S extends Factura, R> R findBy(Example<S> example, java.util.function.Function<org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery<S>, R> queryFunction) { return queryFunction.apply(null); }
         
         // Custom methods from FacturaRepository
+        public List<Factura> findByPacienteOrderByFechaDesc(Paciente paciente) { return new ArrayList<>(); }
         @Override
-        public List<Factura> findByPacienteOrderByFechaFacturaDesc(com.sena.creyese.dentvision_spring.modelo.Paciente paciente) { return new ArrayList<>(); }
+        public List<Factura> findByEstadoOrderByFechaDesc(boolean estado) { return new ArrayList<>(); }
         @Override
-        public List<Factura> findByEstadoOrderByFechaFacturaDesc(String estado) { return new ArrayList<>(); }
-        @Override
-        public List<Factura> findByFechaFacturaBetweenOrderByFechaFacturaDesc(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
+        public List<Factura> findByFechaBetweenOrderByFechaDesc(java.util.Date inicio, java.util.Date fin) { return new ArrayList<>(); }
         @Override
         public List<Factura> findFacturasPendientes() { return new ArrayList<>(); }
         @Override
@@ -680,16 +737,18 @@ public class MockRepositoryConfig {
         @Override
         public Double sumTotalFacturasPendientes() { return 0.0; }
         @Override
-        public Double sumTotalPagadasByRangoFechas(java.time.LocalDate inicio, java.time.LocalDate fin) { return 0.0; }
+        public Double sumTotalPagadasByRangoFechas(java.util.Date inicio, java.util.Date fin) { return 0.0; }
         @Override
-        public List<Factura> findByMetodoPagoOrderByFechaFacturaDesc(String metodoPago) { return new ArrayList<>(); }
+        public List<Factura> findByMetodoPagoOrderByFechaDesc(String metodoPago) { return new ArrayList<>(); }
         @Override
-        public List<Factura> findFacturasVencidasPorFecha(java.time.LocalDate currentDate) { return new ArrayList<>(); }
+        public List<Factura> findFacturasVencidasPorFecha(java.util.Date currentDate) { return new ArrayList<>(); }
         @Override
         public List<Factura> findByNumeroFacturaContainingIgnoreCase(String numeroFactura) { return new ArrayList<>(); }
-    }
+}
 
-    private static class InventarioRepositoryMock implements InventarioRepository {
+    public static class InventarioRepositoryMock implements InventarioRepository {
+        
+        public InventarioRepositoryMock() {}
         @Override
         public List<Inventario> findAll() { return new ArrayList<>(); }
         @Override
@@ -757,32 +816,12 @@ public class MockRepositoryConfig {
         
         // Custom methods from InventarioRepository
         @Override
-        public List<Inventario> findByInsumoOrderByFechaMovimientoDesc(com.sena.creyese.dentvision_spring.modelo.Insumo insumo) { return new ArrayList<>(); }
-        @Override
-        public List<Inventario> findByTipoMovimientoOrderByFechaMovimientoDesc(String tipoMovimiento) { return new ArrayList<>(); }
-        @Override
-        public List<Inventario> findByFechaMovimientoBetweenOrderByFechaMovimientoDesc(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        @Override
-        public List<Inventario> findMovimientosDeInsumosConBajoStock() { return new ArrayList<>(); }
-        @Override
-        public List<Inventario> findEntradas() { return new ArrayList<>(); }
-        @Override
-        public List<Inventario> findSalidas() { return new ArrayList<>(); }
-        @Override
-        public List<Inventario> findByInsumoAndTipoMovimiento(Long idInsumo, String tipoMovimiento) { return new ArrayList<>(); }
-        @Override
-        public Long sumTotalEntradasByInsumo(Long idInsumo) { return 0L; }
-        @Override
-        public Long sumTotalSalidasByInsumo(Long idInsumo) { return 0L; }
-        @Override
-        public List<Inventario> findByResponsableContainingIgnoreCase(String responsable) { return new ArrayList<>(); }
-        @Override
-        public List<Inventario> findByFechaMovimiento(java.time.LocalDate fecha) { return new ArrayList<>(); }
-        @Override
-        public List<Inventario> findByNotasContainingIgnoreCase(String notas) { return new ArrayList<>(); }
+        public List<Inventario> findByCantidadGreaterThan(Integer cantidad) { return new ArrayList<>(); }
     }
 
-    private static class MensajesRepositoryMock implements MensajesRepository {
+    public static class MensajesRepositoryMock implements MensajesRepository {
+        
+        public MensajesRepositoryMock() {}
         @Override
         public List<Mensajes> findAll() { return new ArrayList<>(); }
         @Override
@@ -850,36 +889,14 @@ public class MockRepositoryConfig {
         
         // Custom methods from MensajesRepository
         @Override
-        public List<Mensajes> findByRemitenteOrderByFechaEnvioDesc(com.sena.creyese.dentvision_spring.modelo.Usuario remitente) { return new ArrayList<>(); }
-        @Override
-        public List<Mensajes> findByDestinatarioOrderByFechaEnvioDesc(com.sena.creyese.dentvision_spring.modelo.Usuario destinatario) { return new ArrayList<>(); }
-        @Override
-        public List<Mensajes> findByAsuntoContainingIgnoreCase(String asunto) { return new ArrayList<>(); }
-        @Override
-        public List<Mensajes> findByEstadoOrderByFechaEnvioDesc(String estado) { return new ArrayList<>(); }
+        public List<Mensajes> findByMensajeContainingIgnoreCase(String mensaje) { return new ArrayList<>(); }
         @Override
         public List<Mensajes> findByFechaEnvioBetweenOrderByFechaEnvioDesc(java.time.LocalDateTime inicio, java.time.LocalDateTime fin) { return new ArrayList<>(); }
-        @Override
-        public List<Mensajes> findMensajesNoLeidosByDestinatario(Long idDestinatario) { return new ArrayList<>(); }
-        @Override
-        public List<Mensajes> findMensajesLeidos() { return new ArrayList<>(); }
-        @Override
-        public List<Mensajes> findMensajesNoLeidos() { return new ArrayList<>(); }
-        @Override
-        public Long countMensajesNoLeidosByDestinatario(Long idDestinatario) { return 0L; }
-        @Override
-        public List<Mensajes> findMensajesByUsuario(Long idRemitente, Long idUsuario) { return new ArrayList<>(); }
-        @Override
-        public List<Mensajes> findByContenidoContainingIgnoreCase(String contenido) { return new ArrayList<>(); }
-        @Override
-        public List<Mensajes> findMensajesDeAltaPrioridadNoLeidos() { return new ArrayList<>(); }
-        @Override
-        public List<Mensajes> findByFechaEnvio(java.time.LocalDateTime fecha) { return new ArrayList<>(); }
-        @Override
-        public List<Mensajes> findByRemitenteAndDestinatarioOrderByFechaEnvioDesc(com.sena.creyese.dentvision_spring.modelo.Usuario remitente, com.sena.creyese.dentvision_spring.modelo.Usuario destinatario) { return new ArrayList<>(); }
     }
 
-    private static class NotificacionesRepositoryMock implements NotificacionesRepository {
+    public static class NotificacionesRepositoryMock implements NotificacionesRepository {
+        
+        public NotificacionesRepositoryMock() {}
         @Override
         public List<Notificaciones> findAll() { return new ArrayList<>(); }
         @Override
@@ -947,38 +964,16 @@ public class MockRepositoryConfig {
         
         // Custom methods from NotificacionesRepository
         @Override
-        public List<Notificaciones> findByUsuarioOrderByFechaCreacionDesc(com.sena.creyese.dentvision_spring.modelo.Usuario usuario) { return new ArrayList<>(); }
-        @Override
-        public List<Notificaciones> findByTipoOrderByFechaCreacionDesc(String tipo) { return new ArrayList<>(); }
-        @Override
-        public List<Notificaciones> findByEstadoOrderByFechaCreacionDesc(String estado) { return new ArrayList<>(); }
-        @Override
-        public List<Notificaciones> findByFechaCreacionBetweenOrderByFechaCreacionDesc(java.time.LocalDateTime inicio, java.time.LocalDateTime fin) { return new ArrayList<>(); }
-        @Override
-        public List<Notificaciones> findNotificacionesNoLeidasByUsuario(Long idUsuario) { return new ArrayList<>(); }
-        @Override
-        public List<Notificaciones> findNotificacionesLeidas() { return new ArrayList<>(); }
-        @Override
-        public List<Notificaciones> findNotificacionesNoLeidas() { return new ArrayList<>(); }
-        @Override
-        public Long countNotificacionesNoLeidasByUsuario(Long idUsuario) { return 0L; }
-        @Override
-        public Long countTotalNotificacionesNoLeidas() { return 0L; }
-        @Override
-        public List<Notificaciones> findByTituloContainingIgnoreCase(String titulo) { return new ArrayList<>(); }
-        @Override
         public List<Notificaciones> findByMensajeContainingIgnoreCase(String mensaje) { return new ArrayList<>(); }
         @Override
-        public List<Notificaciones> findNotificacionesDeAltaPrioridadNoLeidas() { return new ArrayList<>(); }
+        public List<Notificaciones> findByLeidoTrue() { return new ArrayList<>(); }
         @Override
-        public List<Notificaciones> findByFechaCreacion(java.time.LocalDateTime fecha) { return new ArrayList<>(); }
-        @Override
-        public List<Notificaciones> findNotificacionesVencidasNoLeidas(java.time.LocalDateTime fechaLimite) { return new ArrayList<>(); }
-        @Override
-        public List<Notificaciones> findByUsuarioAndTipoOrderByFechaCreacionDesc(com.sena.creyese.dentvision_spring.modelo.Usuario usuario, String tipo) { return new ArrayList<>(); }
-    }
+        public List<Notificaciones> findByLeidoFalse() { return new ArrayList<>(); }
+                    }
 
-    private static class OrdenDetalleRepositoryMock implements OrdenDetalleRepository {
+    public static class OrdenDetalleRepositoryMock implements OrdenDetalleRepository {
+        
+        public OrdenDetalleRepositoryMock() {}
         @Override
         public List<OrdenDetalle> findAll() { return new ArrayList<>(); }
         @Override
@@ -1077,7 +1072,9 @@ public class MockRepositoryConfig {
         public List<OrdenDetalle> findDetallesPendientesByOrdenTrabajo(Long idOrdenTrabajo) { return new ArrayList<>(); }
     }
 
-    private static class OrdenTrabajoRepositoryMock implements OrdenTrabajoRepository {
+    public static class OrdenTrabajoRepositoryMock implements OrdenTrabajoRepository {
+        
+        public OrdenTrabajoRepositoryMock() {}
         @Override
         public List<OrdenTrabajo> findAll() { return new ArrayList<>(); }
         @Override
@@ -1145,40 +1142,38 @@ public class MockRepositoryConfig {
         
         // Custom methods from OrdenTrabajoRepository
         @Override
+        public List<OrdenTrabajo> findByPaciente(com.sena.creyese.dentvision_spring.modelo.Paciente paciente) { return new ArrayList<>(); }
+        @Override
+        public List<OrdenTrabajo> findByOdontologo(com.sena.creyese.dentvision_spring.modelo.Odontologo odontologo) { return new ArrayList<>(); }
+        @Override
+        public List<OrdenTrabajo> findByTecnico(com.sena.creyese.dentvision_spring.modelo.TecnicoDental tecnico) { return new ArrayList<>(); }
+        @Override
+        public List<OrdenTrabajo> findByEstado(String estado) { return new ArrayList<>(); }
+        @Override
+        public List<OrdenTrabajo> findByObservacionesContainingIgnoreCase(String observaciones) { return new ArrayList<>(); }
+        
+        // Additional methods with ordering
         public List<OrdenTrabajo> findByPacienteOrderByFechaCreacionDesc(com.sena.creyese.dentvision_spring.modelo.Paciente paciente) { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findByOdontologoOrderByFechaCreacionDesc(com.sena.creyese.dentvision_spring.modelo.Odontologo odontologo) { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findByTecnicoDentalOrderByFechaCreacionDesc(com.sena.creyese.dentvision_spring.modelo.TecnicoDental tecnicoDental) { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findByEstadoOrderByFechaCreacionDesc(String estado) { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findByFechaCreacionBetweenOrderByFechaCreacionDesc(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findByFechaEntregaBetweenOrderByFechaCreacionDesc(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findOrdenesPendientes() { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findOrdenesEnProgreso() { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findOrdenesCompletadas() { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findOrdenesEntregadas() { return new ArrayList<>(); }
-        @Override
         public Long countOrdenesPendientes() { return 0L; }
-        @Override
         public List<OrdenTrabajo> findOrdenesVencidas(java.time.LocalDate currentDate) { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findOrdenesDeAltaPrioridad() { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findByTipoTrabajoContainingIgnoreCase(String tipoTrabajo) { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findByDescripcionContainingIgnoreCase(String descripcion) { return new ArrayList<>(); }
-        @Override
         public List<OrdenTrabajo> findOrdenesPendientesByOdontologo(Long idOdontologo) { return new ArrayList<>(); }
     }
 
-    private static class PagosRepositoryMock implements PagosRepository {
+    public static class PagosRepositoryMock implements PagosRepository {
+        
+        public PagosRepositoryMock() {}
         @Override
         public List<Pagos> findAll() { return new ArrayList<>(); }
         @Override
@@ -1246,34 +1241,14 @@ public class MockRepositoryConfig {
         
         // Custom methods from PagosRepository
         @Override
-        public List<Pagos> findByFacturaOrderByFechaPagoDesc(com.sena.creyese.dentvision_spring.modelo.Factura factura) { return new ArrayList<>(); }
+        public List<Pagos> findByMetodPago(String metodPago) { return new ArrayList<>(); }
         @Override
-        public List<Pagos> findByMetodoPagoOrderByFechaPagoDesc(String metodoPago) { return new ArrayList<>(); }
-        @Override
-        public List<Pagos> findByFechaPagoBetweenOrderByFechaPagoDesc(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        @Override
-        public List<Pagos> findPagosCompletados() { return new ArrayList<>(); }
-        @Override
-        public List<Pagos> findPagosPendientes() { return new ArrayList<>(); }
-        @Override
-        public List<Pagos> findPagosRechazados() { return new ArrayList<>(); }
-        @Override
-        public Double sumTotalPagosCompletadosByRangoFechas(java.time.LocalDate inicio, java.time.LocalDate fin) { return 0.0; }
-        @Override
-        public Double sumTotalPagosPendientes() { return 0.0; }
-        @Override
-        public Long countPagosPendientes() { return 0L; }
-        @Override
-        public List<Pagos> findByReferenciaContainingIgnoreCase(String referencia) { return new ArrayList<>(); }
-        @Override
-        public List<Pagos> findByFechaPago(java.time.LocalDate fecha) { return new ArrayList<>(); }
-        @Override
-        public List<Pagos> findByPaciente(Long idPaciente) { return new ArrayList<>(); }
-        @Override
-        public List<Pagos> findByEstadoOrderByFechaPagoDesc(String estado) { return new ArrayList<>(); }
+        public List<Pagos> findByMontoGreaterThan(Double monto) { return new ArrayList<>(); }
     }
 
-    private static class PacienteRepositoryMock implements PacienteRepository {
+    public static class PacienteRepositoryMock implements PacienteRepository {
+        
+        public PacienteRepositoryMock() {}
         @Override
         public List<Paciente> findAll() { return new ArrayList<>(); }
         @Override
@@ -1343,42 +1318,14 @@ public class MockRepositoryConfig {
         @Override
         public Optional<Paciente> findByDocumento(String documento) { return Optional.empty(); }
         @Override
-        public List<Paciente> findByNombresContainingIgnoreCase(String nombres) { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findByApellidosContainingIgnoreCase(String apellidos) { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findByEstadoTrue() { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findByEstadoFalse() { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findActivosOrderByNombres() { return new ArrayList<>(); }
-        @Override
-        public Long countPacientesActivos() { return 0L; }
-        @Override
-        public List<Paciente> findByFechaNacimientoBetween(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findByAnioNacimiento(Integer anio) { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findByCiudadContainingIgnoreCase(String ciudad) { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findByDireccionContainingIgnoreCase(String direccion) { return new ArrayList<>(); }
-        @Override
         public List<Paciente> findByTelefonoContainingIgnoreCase(String telefono) { return new ArrayList<>(); }
         @Override
-        public List<Paciente> findByEmailDomain(String domain) { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findByFechaRegistro(java.time.LocalDate fecha) { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findByFechaRegistroBetween(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findActivosByFechaNacimientoBetween(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findByOcupacionContainingIgnoreCase(String ocupacion) { return new ArrayList<>(); }
-        @Override
-        public List<Paciente> findActivosConContactoEmergencia() { return new ArrayList<>(); }
+        public List<Paciente> findByDireccionContainingIgnoreCase(String direccion) { return new ArrayList<>(); }
     }
 
-    private static class ProcedimientoRepositoryMock implements ProcedimientoRepository {
+    public static class ProcedimientoRepositoryMock implements ProcedimientoRepository {
+        
+        public ProcedimientoRepositoryMock() {}
         @Override
         public List<Procedimiento> findAll() { return new ArrayList<>(); }
         @Override
@@ -1483,7 +1430,9 @@ public class MockRepositoryConfig {
         public List<Procedimiento> findActivosOrderByPrecioDesc() { return new ArrayList<>(); }
     }
 
-    private static class RolRepositoryMock implements RolRepository {
+    public static class RolRepositoryMock implements RolRepository {
+        
+        public RolRepositoryMock() {}
         @Override
         public List<Roles> findAll() { return new ArrayList<>(); }
         @Override
@@ -1562,11 +1511,7 @@ public class MockRepositoryConfig {
         public Long countByNombreRol(com.sena.creyese.dentvision_spring.enums.TipoRol nombreRol) { return 0L; }
         @Override
         public List<Roles> findAllOrderByNombreRol() { return new ArrayList<>(); }
-        @Override
-        public List<Roles> findRolesWithDescripcion() { return new ArrayList<>(); }
-        @Override
-        public List<Roles> findByDescripcionContainingIgnoreCase(String descripcion) { return new ArrayList<>(); }
-        @Override
+                @Override
         public List<Roles> findAdminRoles() { return new ArrayList<>(); }
         @Override
         public List<Roles> findClinicalRoles() { return new ArrayList<>(); }
@@ -1574,7 +1519,9 @@ public class MockRepositoryConfig {
         public Optional<Roles> findPacienteRole() { return Optional.empty(); }
     }
 
-    private static class ServiciosRepositoryMock implements ServiciosRepository {
+    public static class ServiciosRepositoryMock implements ServiciosRepository {
+        
+        public ServiciosRepositoryMock() {}
         @Override
         public List<Servicios> findAll() { return new ArrayList<>(); }
         @Override
@@ -1642,40 +1589,31 @@ public class MockRepositoryConfig {
         
         // Custom methods from ServiciosRepository
         @Override
+        public List<Servicios> findByNombreServiciosContainingIgnoreCase(String nombreServicios) { return new ArrayList<>(); }
+        @Override
+        public List<Servicios> findByDescripcionServiciosContainingIgnoreCase(String descripcionServicios) { return new ArrayList<>(); }
+        
+        // Additional methods
         public List<Servicios> findByNombreContainingIgnoreCase(String nombre) { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findByCategoriaContainingIgnoreCase(String categoria) { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findByEstadoTrue() { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findByEstadoFalse() { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findActivosOrderByNombre() { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findActivosOrderByPrecio() { return new ArrayList<>(); }
-        @Override
-        public List<Servicios> findActivosOrderByPrecioDesc() { return new ArrayList<>(); }
-        @Override
         public Long countServiciosActivos() { return 0L; }
-        @Override
         public List<Servicios> findByPrecioBetween(Double min, Double max) { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findByDuracionMinutos(Integer duracionMinutos) { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findByDuracionMinutosLessThan(Integer duracionMinutos) { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findByDuracionMinutosGreaterThan(Integer duracionMinutos) { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findByNombreOrDescripcionContaining(String keyword) { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findByRequiereAutorizacionTrue() { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findByRequiereAutorizacionFalse() { return new ArrayList<>(); }
-        @Override
         public List<Servicios> findServiciosDisponiblesDirectamente() { return new ArrayList<>(); }
     }
 
-    private static class TecnicoDentalRepositoryMock implements TecnicoDentalRepository {
+    public static class TecnicoDentalRepositoryMock implements TecnicoDentalRepository {
+        
+        public TecnicoDentalRepositoryMock() {}
         @Override
         public List<TecnicoDental> findAll() { return new ArrayList<>(); }
         @Override
@@ -1785,7 +1723,9 @@ public class MockRepositoryConfig {
         public List<TecnicoDental> findTecnicosDisponibles() { return new ArrayList<>(); }
     }
 
-    private static class UsuarioRepositoryMock implements UsuarioRepository {
+    public static class UsuarioRepositoryMock implements UsuarioRepository {
+        
+        public UsuarioRepositoryMock() {}
         @Override
         public List<Usuario> findAll() { return new ArrayList<>(); }
         @Override
@@ -1875,31 +1815,5 @@ public class MockRepositoryConfig {
         @Override
         public List<Usuario> findByEstadoFalse() { return new ArrayList<>(); }
         
-        @Override
-        public List<Usuario> findActivosOrderByNombres() { return new ArrayList<>(); }
-        
-        @Override
-        public Long countUsuariosActivos() { return 0L; }
-        
-        @Override
-        public List<Usuario> findByRolAndEstado(TipoRol rol) { return new ArrayList<>(); }
-        
-        @Override
-        public List<Usuario> findByRol(TipoRol rol) { return new ArrayList<>(); }
-        
-        @Override
-        public List<Usuario> findByFechaRegistro(java.time.LocalDate fecha) { return new ArrayList<>(); }
-        
-        @Override
-        public List<Usuario> findByFechaRegistroBetween(java.time.LocalDate inicio, java.time.LocalDate fin) { return new ArrayList<>(); }
-        
-        @Override
-        public List<Usuario> findByEmailDomain(String domain) { return new ArrayList<>(); }
-        
-        @Override
-        public List<Usuario> findAdminsActivos() { return new ArrayList<>(); }
-        
-        @Override
-        public List<Usuario> findPersonalClinicoActivo() { return new ArrayList<>(); }
     }
 }
