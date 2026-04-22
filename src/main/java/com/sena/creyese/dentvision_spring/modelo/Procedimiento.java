@@ -39,6 +39,30 @@ public class Procedimiento {
     @Column(nullable = false, length = 50)
     private String descripcion;
 
+    /** Categoría del procedimiento */
+    @Column(length = 50)
+    private String categoria;
+
+    /** Prioridad del procedimiento */
+    @Column(length = 20)
+    private String prioridad;
+
+    /** Duración del procedimiento en minutos */
+    @Column(nullable = false)
+    private int duracionMinutos;
+
+    /** Precio del procedimiento */
+    @Column(nullable = false)
+    private double precio;
+
+    /** Indica si el procedimiento requiere radiografía */
+    @Column(nullable = false)
+    private boolean requiereRadiografia;
+
+    /** Indica si el procedimiento requiere anestesia */
+    @Column(nullable = false)
+    private boolean requiereAnestesia;
+
     /** Estado del procedimiento (true: activo, false: inactivo/completado) */
     private boolean estado;
 
@@ -84,6 +108,114 @@ public class Procedimiento {
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    /**
+     * Obtiene la categoría del procedimiento.
+     * 
+     * @return Categoría del procedimiento
+     */
+    public String getCategoria() {
+        return categoria;
+    }
+
+    /**
+     * Establece la categoría del procedimiento.
+     * 
+     * @param categoria Categoría a establecer
+     */
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    /**
+     * Obtiene la prioridad del procedimiento.
+     * 
+     * @return Prioridad del procedimiento
+     */
+    public String getPrioridad() {
+        return prioridad;
+    }
+
+    /**
+     * Establece la prioridad del procedimiento.
+     * 
+     * @param prioridad Prioridad a establecer
+     */
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
+    }
+
+    /**
+     * Obtiene la duración del procedimiento en minutos.
+     * 
+     * @return Duración en minutos
+     */
+    public int getDuracionMinutos() {
+        return duracionMinutos;
+    }
+
+    /**
+     * Establece la duración del procedimiento en minutos.
+     * 
+     * @param duracionMinutos Duración a establecer
+     */
+    public void setDuracionMinutos(int duracionMinutos) {
+        this.duracionMinutos = duracionMinutos;
+    }
+
+    /**
+     * Obtiene el precio del procedimiento.
+     * 
+     * @return Precio del procedimiento
+     */
+    public double getPrecio() {
+        return precio;
+    }
+
+    /**
+     * Establece el precio del procedimiento.
+     * 
+     * @param precio Precio a establecer
+     */
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    /**
+     * Obtiene si el procedimiento requiere radiografía.
+     * 
+     * @return true si requiere radiografía, false si no
+     */
+    public boolean isRequiereRadiografia() {
+        return requiereRadiografia;
+    }
+
+    /**
+     * Establece si el procedimiento requiere radiografía.
+     * 
+     * @param requiereRadiografia Valor a establecer
+     */
+    public void setRequiereRadiografia(boolean requiereRadiografia) {
+        this.requiereRadiografia = requiereRadiografia;
+    }
+
+    /**
+     * Obtiene si el procedimiento requiere anestesia.
+     * 
+     * @return true si requiere anestesia, false si no
+     */
+    public boolean isRequiereAnestesia() {
+        return requiereAnestesia;
+    }
+
+    /**
+     * Establece si el procedimiento requiere anestesia.
+     * 
+     * @param requiereAnestesia Valor a establecer
+     */
+    public void setRequiereAnestesia(boolean requiereAnestesia) {
+        this.requiereAnestesia = requiereAnestesia;
     }
 
     /**

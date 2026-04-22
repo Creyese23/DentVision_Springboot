@@ -1,6 +1,7 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
 import jakarta.persistence.*;
+import java.util.Date;
 
 /**
  * Entidad que representa imágenes de diseño dental en el sistema DentVision.
@@ -34,9 +35,39 @@ public class ImagenesDiseno {
     @Column(nullable = false, length = 255)
     private String imagen;
 
+    /** Nombre del archivo de imagen */
+    @Column(nullable = false, length = 255)
+    private String nombreArchivo;
+
     /** Descripción detallada de la imagen y su propósito */
     @Column(nullable = false, length = 255)
     private String descripcion;
+
+    /** Fecha de creación de la imagen */
+    @Column(nullable = false)
+    private Date fechaCreacion;
+
+    /** Estado de la imagen (APROBADA, PENDIENTE, RECHAZADA) */
+    @Column(nullable = false, length = 50)
+    private String estado;
+
+    /** Notas adicionales sobre la imagen */
+    @Column(length = 500)
+    private String notas;
+
+    /** Tipo de imagen */
+    @Column(length = 50)
+    private String tipoImagen;
+
+    /** Orden de trabajo asociada a esta imagen */
+    @ManyToOne
+    @JoinColumn(name = "idOrdenTrabajo")
+    private OrdenTrabajo ordenTrabajo;
+
+    /** Paciente asociado a esta imagen */
+    @ManyToOne
+    @JoinColumn(name = "idPaciente")
+    private Paciente paciente;
 
     /** Procedimiento dental asociado a esta imagen */
     @ManyToOne
@@ -80,6 +111,24 @@ public class ImagenesDiseno {
     }
 
     /**
+     * Obtiene el nombre del archivo de imagen.
+     * 
+     * @return Nombre del archivo
+     */
+    public String getNombreArchivo() {
+        return nombreArchivo;
+    }
+
+    /**
+     * Establece el nombre del archivo de imagen.
+     * 
+     * @param nombreArchivo Nombre del archivo a establecer
+     */
+    public void setNombreArchivo(String nombreArchivo) {
+        this.nombreArchivo = nombreArchivo;
+    }
+
+    /**
      * Obtiene la descripción de la imagen.
      * 
      * @return Descripción detallada
@@ -95,6 +144,114 @@ public class ImagenesDiseno {
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    /**
+     * Obtiene la fecha de creación de la imagen.
+     * 
+     * @return Fecha de creación
+     */
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    /**
+     * Establece la fecha de creación de la imagen.
+     * 
+     * @param fechaCreacion Fecha de creación a establecer
+     */
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    /**
+     * Obtiene el estado de la imagen.
+     * 
+     * @return Estado de la imagen
+     */
+    public String getEstado() {
+        return estado;
+    }
+
+    /**
+     * Establece el estado de la imagen.
+     * 
+     * @param estado Estado a establecer
+     */
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    /**
+     * Obtiene las notas adicionales de la imagen.
+     * 
+     * @return Notas adicionales
+     */
+    public String getNotas() {
+        return notas;
+    }
+
+    /**
+     * Establece las notas adicionales de la imagen.
+     * 
+     * @param notas Notas a establecer
+     */
+    public void setNotas(String notas) {
+        this.notas = notas;
+    }
+
+    /**
+     * Obtiene el tipo de imagen.
+     * 
+     * @return Tipo de imagen
+     */
+    public String getTipoImagen() {
+        return tipoImagen;
+    }
+
+    /**
+     * Establece el tipo de imagen.
+     * 
+     * @param tipoImagen Tipo de imagen a establecer
+     */
+    public void setTipoImagen(String tipoImagen) {
+        this.tipoImagen = tipoImagen;
+    }
+
+    /**
+     * Obtiene la orden de trabajo asociada.
+     * 
+     * @return Orden de trabajo relacionada
+     */
+    public OrdenTrabajo getOrdenTrabajo() {
+        return ordenTrabajo;
+    }
+
+    /**
+     * Establece la orden de trabajo asociada.
+     * 
+     * @param ordenTrabajo Orden de trabajo a establecer
+     */
+    public void setOrdenTrabajo(OrdenTrabajo ordenTrabajo) {
+        this.ordenTrabajo = ordenTrabajo;
+    }
+
+    /**
+     * Obtiene el paciente asociado.
+     * 
+     * @return Paciente relacionado
+     */
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    /**
+     * Establece el paciente asociado.
+     * 
+     * @param paciente Paciente a establecer
+     */
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 
     /**

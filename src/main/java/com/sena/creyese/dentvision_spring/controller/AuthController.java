@@ -77,11 +77,9 @@ public class AuthController {
 
         // Codificar contraseñas por seguridad
         usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
-        usuario.setConfirmar_password(passwordEncoder.encode(usuario.getConfirmar_password()));
         
-        // Establecer estado y fecha de registro
+        // Establecer estado
         usuario.setEstado(true);
-        usuario.setFecha_registro(java.time.LocalDate.now());
         
         // Guardar el nuevo usuario
         Usuario nuevoUsuario = usuarioService.guardar(usuario);
@@ -247,6 +245,7 @@ public class AuthController {
      * @return Map con los claims del token
      * @throws Exception Si el token es inválido
      */
+    @SuppressWarnings("unchecked")
     private Map<String, Object> parseToken(String token) throws Exception {
         // Dividir el token en sus 3 partes
         String[] parts = token.split("\\.");

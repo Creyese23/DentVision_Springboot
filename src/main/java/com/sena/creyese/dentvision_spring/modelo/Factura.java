@@ -32,9 +32,17 @@ public class Factura {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idFactura;
 
+    /** Número de factura único */
+    @Column(nullable = false, unique = true, length = 50)
+    private String numeroFactura;
+
     /** Fecha de emisión de la factura */
     @Column(nullable = false, length = 50)
     private Date fecha;
+
+    /** Fecha de vencimiento de la factura */
+    @Column(nullable = false, length = 50)
+    private Date fechaVencimiento;
 
     /** Valor total de la factura */
     @Column(nullable = false)
@@ -43,6 +51,10 @@ public class Factura {
     /** Estado de pago de la factura (true=pagada, false=pendiente) */
     @Column(nullable = false, length = 50)
     private boolean estado;
+
+    /** Método de pago utilizado para la factura */
+    @Column(nullable = false, length = 50)
+    private String metodoPago;
 
     /** Paciente asociado a la factura */
     @ManyToOne
@@ -68,6 +80,24 @@ public class Factura {
     }
 
     /**
+     * Obtiene el número de la factura.
+     * 
+     * @return Número de factura
+     */
+    public String getNumeroFactura() {
+        return numeroFactura;
+    }
+
+    /**
+     * Establece el número de la factura.
+     * 
+     * @param numeroFactura Número de factura a establecer
+     */
+    public void setNumeroFactura(String numeroFactura) {
+        this.numeroFactura = numeroFactura;
+    }
+
+    /**
      * Obtiene la fecha de emisión de la factura.
      * 
      * @return Fecha de la factura
@@ -83,6 +113,24 @@ public class Factura {
      */
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    /**
+     * Obtiene la fecha de vencimiento de la factura.
+     * 
+     * @return Fecha de vencimiento de la factura
+     */
+    public Date getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    /**
+     * Establece la fecha de vencimiento de la factura.
+     * 
+     * @param fechaVencimiento Fecha de vencimiento a establecer
+     */
+    public void setFechaVencimiento(Date fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
     }
 
     /**
@@ -119,6 +167,24 @@ public class Factura {
      */
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    /**
+     * Obtiene el método de pago de la factura.
+     * 
+     * @return Método de pago utilizado
+     */
+    public String getMetodoPago() {
+        return metodoPago;
+    }
+
+    /**
+     * Establece el método de pago de la factura.
+     * 
+     * @param metodoPago Método de pago a establecer
+     */
+    public void setMetodoPago(String metodoPago) {
+        this.metodoPago = metodoPago;
     }
 
     /**

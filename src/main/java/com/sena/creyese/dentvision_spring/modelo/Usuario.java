@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * Entidad que representa un usuario en el sistema DentVision.
@@ -51,23 +51,13 @@ public class Usuario {
     @Column(unique = true, nullable = false, length = 100)
     private String email;
 
-    /** Confirmación del email (obligatorio, máximo 100 caracteres) */
-    @NotBlank(message = "Es obligatorio diligenciar la confirmación del email")
-    @Size(max=100, message = "Máximo 100 caracteres")
-    @Column(nullable = false, length = 100)
-    private String confirmar_email;
-
     /** Contraseña del usuario (obligatorio, máximo 100 caracteres) */
     @NotBlank(message = "Es obligatorio diligenciar la contraseña")
-    @Size(max=100, message = "Máximo 100 caracteres")
+    @Size(min=8, message = "Máximo 100 caracteres")
     @Column(nullable = false, length = 100)
     private String password;
 
-    /** Confirmación de la contraseña (obligatorio, máximo 100 caracteres) */
-    @NotBlank(message = "Es obligatorio diligenciar la confirmación de la contraseña")
-    @Size(max=100, message = "Máximo 100 caracteres")
-    @Column(nullable = false, length = 100)
-    private String confirmar_password;
+
 
     /** Estado del usuario (activo/inactivo) */
     @Column(nullable = false)
@@ -75,7 +65,7 @@ public class Usuario {
 
     /** Fecha de registro del usuario (obligatoria) */
     @Column(nullable = false)
-    private LocalDate fecha_registro;
+    private java.time.LocalDateTime fecha_registro;
 
     /** Rol asignado al usuario (relación muchos a uno) */
     @ManyToOne
@@ -154,23 +144,7 @@ public class Usuario {
         this.email = email;
     }
 
-    /**
-     * Obtiene la confirmación del email.
-     * 
-     * @return Confirmación del email
-     */
-    public String getConfirmar_email() {
-        return confirmar_email;
-    }
 
-    /**
-     * Establece la confirmación del email.
-     * 
-     * @param confirmar_email Confirmación del email a establecer
-     */
-    public void setConfirmar_email(String confirmar_email) {
-        this.confirmar_email = confirmar_email;
-    }
 
     /**
      * Obtiene la contraseña del usuario.
@@ -190,23 +164,8 @@ public class Usuario {
         this.password = password;
     }
 
-    /**
-     * Obtiene la confirmación de la contraseña.
-     * 
-     * @return Confirmación de la contraseña
-     */
-    public String getConfirmar_password() {
-        return confirmar_password;
-    }
 
-    /**
-     * Establece la confirmación de la contraseña.
-     * 
-     * @param confirmar_password Confirmación de la contraseña a establecer
-     */
-    public void setConfirmar_password(String confirmar_password) {
-        this.confirmar_password = confirmar_password;
-    }
+
 
     /**
      * Obtiene el estado del usuario.
@@ -231,7 +190,7 @@ public class Usuario {
      * 
      * @return Fecha de registro
      */
-    public LocalDate getFecha_registro() {
+    public LocalDateTime getFecha_registro() {
         return fecha_registro;
     }
 
@@ -240,7 +199,7 @@ public class Usuario {
      * 
      * @param fecha_registro Fecha de registro a establecer
      */
-    public void setFecha_registro(LocalDate fecha_registro) {
+    public void setFecha_registro(LocalDateTime fecha_registro) {
         this.fecha_registro = fecha_registro;
     }
 
@@ -260,5 +219,16 @@ public class Usuario {
      */
     public void setRol(Roles roles) {
         this.roles = roles;
+    }
+
+    /**
+     * Método que se ejecuta automáticamente antes de persistir el usuario.
+     * Establece la fecha de registro actual si no está definida.
+     */
+    @PrePersist
+    public void prePersist() {
+        if (this.fecha_registro == null) {
+            this.fecha_registro = LocalDateTime.now();
+        }
     }
 }

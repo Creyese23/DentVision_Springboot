@@ -46,6 +46,22 @@ public class Insumo {
     @Column(nullable = false)
     private int stockMinimo;
 
+    /** Estado del insumo (true=activo, false=inactivo) */
+    @Column(nullable = false)
+    private boolean estado;
+
+    /** Categoría del insumo */
+    @Column(length = 100)
+    private String categoria;
+
+    /** Precio unitario del insumo */
+    @Column(nullable = false)
+    private double precioUnitario;
+
+    /** Proveedor del insumo */
+    @Column(length = 100)
+    private String proveedor;
+
     /**
      * Obtiene el identificador único del insumo.
      * 
@@ -134,5 +150,77 @@ public class Insumo {
      */
     public void setStockMinimo(int stockMinimo) {
         this.stockMinimo = stockMinimo;
+    }
+
+    /**
+     * Obtiene el estado del insumo.
+     * 
+     * @return true si está activo, false si está inactivo
+     */
+    public boolean isEstado() {
+        return estado;
+    }
+
+    /**
+     * Establece el estado del insumo.
+     * 
+     * @param estado Estado a establecer
+     */
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    /**
+     * Obtiene la categoría del insumo.
+     * 
+     * @return Categoría del insumo
+     */
+    public String getCategoria() {
+        return categoria;
+    }
+
+    /**
+     * Establece la categoría del insumo.
+     * 
+     * @param categoria Categoría a establecer
+     */
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    /**
+     * Obtiene el precio unitario del insumo.
+     * 
+     * @return Precio unitario
+     */
+    public double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    /**
+     * Establece el precio unitario del insumo.
+     * 
+     * @param precioUnitario Precio unitario a establecer
+     */
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
+    /**
+     * Obtiene el proveedor del insumo.
+     * 
+     * @return Proveedor del insumo
+     */
+    public String getProveedor() {
+        return proveedor;
+    }
+
+    /**
+     * Establece el proveedor del insumo.
+     * 
+     * @param proveedor Proveedor a establecer
+     */
+    public void setProveedor(String proveedor) {
+        this.proveedor = proveedor;
     }
 }

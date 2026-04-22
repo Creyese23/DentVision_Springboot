@@ -14,8 +14,7 @@ import java.util.Optional;
  * Repositorio Spring Data JPA para la gestión de roles en el sistema DentVision.
  * 
  * Esta interfaz proporciona métodos personalizados para realizar operaciones de base de datos
- * sobre la entidad Roles, incluyendo consultas por nombre de rol, validación de existencia
- * y gestión de permisos del sistema.
+ * sobre la entidad Roles, incluyendo consultas por nombre de rol y validación de existencia.
  * 
  * @author Creyese
  * @version 1.0
@@ -80,22 +79,6 @@ public interface RolRepository extends JpaRepository<Roles,Long> {
      */
     @Query("SELECT r FROM Roles r ORDER BY r.nombreRol ASC")
     List<Roles> findAllOrderByNombreRol();
-    
-    /**
-     * Obtiene todos los roles que tienen descripción asignada ordenados alfabéticamente.
-     * 
-     * @return Lista de roles con descripción no nula ordenados por nombre
-     */
-    @Query("SELECT r FROM Roles r WHERE r.descripcion IS NOT NULL ORDER BY r.nombreRol ASC")
-    List<Roles> findRolesWithDescripcion();
-    
-    /**
-     * Busca roles cuya descripción contenga el texto especificado (ignora mayúsculas/minúsculas).
-     * 
-     * @param descripcion Texto a buscar en las descripciones
-     * @return Lista de roles que coinciden con la búsqueda
-     */
-    List<Roles> findByDescripcionContainingIgnoreCase(String descripcion);
     
     /**
      * Obtiene todos los roles de tipo administrador (ADMIN y SUPER_ADMIN).

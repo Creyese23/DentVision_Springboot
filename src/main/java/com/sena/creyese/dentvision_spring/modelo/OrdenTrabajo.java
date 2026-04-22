@@ -30,7 +30,7 @@ public class OrdenTrabajo {
     /** Identificador único de la orden de trabajo (clave primaria) */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idOrden;
+    private Long idOrdenTrabajo;
 
     /** Fecha de creación de la orden de trabajo */
     @Column(nullable = false)
@@ -64,17 +64,17 @@ public class OrdenTrabajo {
      * 
      * @return ID de la orden de trabajo
      */
-    public Long getIdOrden() {
-        return idOrden;
+    public Long getIdOrdenTrabajo() {
+        return idOrdenTrabajo;
     }
 
     /**
      * Establece el identificador único de la orden de trabajo.
      * 
-     * @param idOrden ID de la orden de trabajo a establecer
+     * @param idOrdenTrabajo ID de la orden de trabajo a establecer
      */
-    public void setIdOrden(Long idOrden) {
-        this.idOrden = idOrden;
+    public void setIdOrdenTrabajo(Long idOrdenTrabajo) {
+        this.idOrdenTrabajo = idOrdenTrabajo;
     }
 
     /**
