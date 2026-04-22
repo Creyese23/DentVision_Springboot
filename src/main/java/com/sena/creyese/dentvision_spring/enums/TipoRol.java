@@ -85,5 +85,18 @@ public enum TipoRol {
      * - Comunicación con la clínica
      * - Acceso a portal de paciente
      */
-    PACIENTE
-}
+    PACIENTE,
+
+    /**
+     * Rol de Paciente.
+     *
+     * Permisos:
+     * - Consulta de información personal
+     * - Visualización de historial clínico
+     * - Programación de citas propias
+     * - Consulta de facturas y pagos
+     * - Comunicación con la clínica
+     * - Acceso a portal de paciente
+     */
+    USUARIO
+    }

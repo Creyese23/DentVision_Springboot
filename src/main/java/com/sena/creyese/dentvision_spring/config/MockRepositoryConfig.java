@@ -1,5 +1,6 @@
 package com.sena.creyese.dentvision_spring.config;
 
+import com.sena.creyese.dentvision_spring.enums.EstadoUsuario;
 import com.sena.creyese.dentvision_spring.repository.*;
 import com.sena.creyese.dentvision_spring.modelo.*;
 import org.springframework.context.annotation.Configuration;
@@ -1810,10 +1811,7 @@ public class MockRepositoryConfig {
         public List<Usuario> findByApellidosContainingIgnoreCase(String apellidos) { return new ArrayList<>(); }
         
         @Override
-        public List<Usuario> findByEstadoTrue() { return new ArrayList<>(); }
-        
-        @Override
-        public List<Usuario> findByEstadoFalse() { return new ArrayList<>(); }
+        public List<Usuario> findByEstado(EstadoUsuario estado) { return new ArrayList<>(); }
         
     }
 }

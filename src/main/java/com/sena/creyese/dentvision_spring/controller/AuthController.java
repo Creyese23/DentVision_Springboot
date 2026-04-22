@@ -1,5 +1,6 @@
 package com.sena.creyese.dentvision_spring.controller;
 
+import com.sena.creyese.dentvision_spring.enums.EstadoUsuario;
 import com.sena.creyese.dentvision_spring.modelo.Usuario;
 import com.sena.creyese.dentvision_spring.service.UsuarioService;
 import org.springframework.http.ResponseEntity;
@@ -79,7 +80,7 @@ public class AuthController {
         usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
         
         // Establecer estado
-        usuario.setEstado(true);
+        usuario.setEstado(EstadoUsuario.ACTIVO);
         
         // Guardar el nuevo usuario
         Usuario nuevoUsuario = usuarioService.guardar(usuario);
@@ -121,7 +122,7 @@ public class AuthController {
         Usuario usuario = usuarioOpt.get();
         
         // Verificar que el usuario esté activo
-        if (!usuario.getEstado()) {
+        if (usuario.getEstado() != EstadoUsuario.ACTIVO) {
             Map<String, Object> response = new HashMap<>();
             response.put("error", "Usuario inactivo");
             return ResponseEntity.badRequest().body(response);

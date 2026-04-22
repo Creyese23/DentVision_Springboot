@@ -1,5 +1,6 @@
 package com.sena.creyese.dentvision_spring.modelo;
 
+import com.sena.creyese.dentvision_spring.enums.EstadoUsuario;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -61,7 +62,8 @@ public class Usuario {
 
     /** Estado del usuario (activo/inactivo) */
     @Column(nullable = false)
-    private boolean estado;
+    @Enumerated(EnumType.STRING)
+    private EstadoUsuario estado;
 
     /** Fecha de registro del usuario (obligatoria) */
     @Column(nullable = false)
@@ -170,18 +172,18 @@ public class Usuario {
     /**
      * Obtiene el estado del usuario.
      * 
-     * @return true si está activo, false si está inactivo
+     * @return Estado del usuario (ACTIVO o INACTIVO)
      */
-    public boolean getEstado() {
+    public EstadoUsuario getEstado() {
         return estado;
     }
 
     /**
      * Establece el estado del usuario.
      * 
-     * @param estado Estado a establecer (true=activo, false=inactivo)
+     * @param estado Estado a establecer (ACTIVO o INACTIVO)
      */
-    public void setEstado(boolean estado) {
+    public void setEstado(EstadoUsuario estado) {
         this.estado = estado;
     }
 
