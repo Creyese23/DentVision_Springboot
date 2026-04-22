@@ -1,5 +1,6 @@
 package com.sena.creyese.dentvision_spring.repository;
 
+import com.sena.creyese.dentvision_spring.enums.EstadoUsuario;
 import com.sena.creyese.dentvision_spring.modelo.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -50,16 +51,10 @@ public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
     List<Usuario> findByApellidosContainingIgnoreCase(String apellidos);
     
     /**
-     * Obtiene todos los usuarios con estado activo (true).
+     * Obtiene todos los usuarios con estado específico.
      * 
-     * @return Lista de usuarios activos
+     * @param estado Estado del usuario a buscar
+     * @return Lista de usuarios con ese estado
      */
-    List<Usuario> findByEstadoTrue();
-    
-    /**
-     * Obtiene todos los usuarios con estado inactivo (false).
-     * 
-     * @return Lista de usuarios inactivos
-     */
-    List<Usuario> findByEstadoFalse();
+    List<Usuario> findByEstado(EstadoUsuario estado);
 }

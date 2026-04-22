@@ -67,7 +67,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable) // Deshabilitar CSRF para API REST
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Sesiones sin estado
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**", "/error", "/usuarios", "/pacientes", "/odontologos", "/tecnicos", "/auxiliares", "/admin", "/roles", "/servicios", "/insumos", "/procedimientos", "/citas", "/ordenes", "/pagos", "/facturas", "/inventario", "/entregas", "/chats", "/mensajes", "/notificaciones", "/imagenes", "/detalle-facturas", "/orden-detalles").permitAll() // Endpoints públicos para desarrollo
+                        .requestMatchers("/auth/**", "/error", "/usuarios", "/pacientes", "/odontologos", "/tecnicos", "/auxiliares", "/admin", "/api/roles", "/servicios", "/insumos", "/procedimientos", "/citas", "/ordenes", "/pagos", "/facturas", "/inventario", "/entregas", "/chats", "/mensajes", "/notificaciones", "/imagenes", "/detalle-facturas", "/orden-detalles").permitAll() // Endpoints públicos para desarrollo
                         .anyRequest().authenticated() // Requerir autenticación para el resto
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class); // Agregar filtro JWT
