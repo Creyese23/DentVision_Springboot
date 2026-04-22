@@ -154,6 +154,6 @@ public interface ImagenesDisenoRepository extends JpaRepository<ImagenesDiseno, 
      * 
      * @return Lista de imágenes aprobadas con órdenes pendientes
      */
-    @Query("SELECT i FROM ImagenesDiseno i WHERE i.estado = 'APROBADA' AND i.ordenTrabajo.estado != 'COMPLETADO'")
+    @Query("SELECT i FROM ImagenesDiseno i WHERE i.estado = 'APROBADA' AND i.ordenTrabajo.estado = true")
     List<ImagenesDiseno> findImagenesAprobadasConOrdenPendiente();
 }
